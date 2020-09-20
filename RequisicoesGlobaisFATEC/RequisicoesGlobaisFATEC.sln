@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequisicoesGlobaisFATEC", "RequisicoesGlobaisFATEC\RequisicoesGlobaisFATEC.csproj", "{F9F1FD63-281B-424F-9350-03A48E502681}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequisicoesGlobaisFATEC", "RequisicoesGlobaisFATEC\RequisicoesGlobaisFATEC.csproj", "{C866B0A6-1F6B-4F72-9D81-CE486944BD22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F9F1FD63-281B-424F-9350-03A48E502681}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F9F1FD63-281B-424F-9350-03A48E502681}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F9F1FD63-281B-424F-9350-03A48E502681}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F9F1FD63-281B-424F-9350-03A48E502681}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C866B0A6-1F6B-4F72-9D81-CE486944BD22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C866B0A6-1F6B-4F72-9D81-CE486944BD22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C866B0A6-1F6B-4F72-9D81-CE486944BD22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C866B0A6-1F6B-4F72-9D81-CE486944BD22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {CC987721-38E2-447F-A65C-86B389253E0F}
+		SolutionGuid = {CEB871D1-F353-4BD1-95FE-906F0988952D}
 	EndGlobalSection
 EndGlobal
