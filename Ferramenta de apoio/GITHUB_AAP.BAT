@@ -203,6 +203,7 @@ goto :Menu
 
 
 :PUSH
+CLS
 CALL :verificaPastaAtual
 echo ESTA OPCAO SALVA AS ALTERACOES DO PROJETO NESTA MAQUINA PARA O GITHUB
 echo TEM CERTEZA? (Precione 1 para sim)
