@@ -78,7 +78,7 @@ ECHO ESTA FUNCAO SERVE PARA ATUALIZAR SUA MAQUINA COM OS ULTIMOS UPDATES DO
 ECHO PROJETO NO GITHUB
 echo. 
 echo QUALQUER PONTO QUE NAO ESTEJA SALVO REMOTAMENTE, SERA DESFEITO
-echo isso é aquelas que nao tenham sido sincronizadas pela opcao 1 e depois a 2
+echo isso eh aquelas que nao tenham sido sincronizadas pela opcao 1 e depois a 2
 echo.
 ECHO ESSA FUNCAO ALTERA OS ARQUIVOS DA PASTA QUE NAO ESTAO IGUAIS AO GITHUB
 ECHO.
