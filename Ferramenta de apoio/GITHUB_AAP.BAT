@@ -40,30 +40,18 @@ CALL :verificaPastaAtual
 mode 60,40
 cls
 CALL :verificaPastaAtual
-echo. CENTRAL DE COMANDOS GIT
-echo. RAMOS:
-cd %pastaprojeto%
-git branch
-echo.
-echo ------------------------------------------------------
-ECHO. Nao deixe seu ramo configurado para master
-ECHO. caso a master esteja verde, use a opcao 3
-echo ------------------------------------------------------
-echo.
-cd ..
+
 ECHO OPCOES:
 echo. 1. Criar ponto de restauracao LOCALMENTE
 echo. 2. Subir os pontos de restauracao para o GITHub
-echo. 3. Selecionar ramo
-echo. 4. Abrir pasta do projeto
-echo. 5. Deixar conforme o GITHUB
+echo. 3. Abrir pasta do projeto
+echo. 4. Deixar conforme o GITHUB
 echo. 0. Sair
 Set /p opcao=" >> "
 if %opcao% EQU 1 (goto :COMMIT)
 if %opcao% EQU 2 (goto :PUSH)
-if %opcao% EQU 3 (goto :RAMO)
-if %opcao% EQU 4 (explorer C:\GIT)
-if %opcao% EQU 5 (call :baixar_codigo)
+if %opcao% EQU 3 (explorer C:\GIT)
+if %opcao% EQU 4 (call :baixar_codigo)
 if %opcao% EQU 0 (exit)
 echo opcao invalida, precione qualquer tecla para continuar
 pause>null
@@ -118,27 +106,7 @@ echo VOLTANDO PARA O MENU
 PAUSE
 GOTO :MENU
 
-:Ramo
-CLS
-echo RAMOS DISPONIVEIS
-cd %pastaprojeto%
-git branch
-ECHO.
-Echo DIGITE O NOME DE UM RAMO EXISTENTE
-ECHO CONFORME A ORIETACAO DA SUA EQUIPE
-echo o item em verde eh o que esta ativo
-echo OBS. NAO USE A MASTER
 
-SET /P RAMO=">> "
-echo TEM CERTEZA? (Precione 1 para sim)
-set CERTEZA=0
-Set /p CERTEZA=" >> "
-if  %CERTEZA% EQU 1 (
-	ECHO +   +   T R O C A N D O   D E   R A M O   +   + 
-	git checkout %RAMO%
-)
-cd ..
-goto :MENU
 
 
 :clonar
