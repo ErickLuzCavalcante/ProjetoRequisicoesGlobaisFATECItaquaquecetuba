@@ -212,6 +212,7 @@ Set /p CERTEZA=" >> "
 if  %CERTEZA% EQU 1 (
 echo +   +   I N I C I A N D O   +   +
 cd %pastaprojeto%  
+git checkout master
 git push 
 CD ..
 echo +   +   F I N A L I Z A D O   +   +
