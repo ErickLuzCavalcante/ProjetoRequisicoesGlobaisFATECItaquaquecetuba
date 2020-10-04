@@ -5,7 +5,7 @@ using System.Web;
  
 namespace requisicoesGlobais.Classes
 {
-    public class Alunos <extend>
+    public class Alunos 
     {
         // Atributos com geters e seters 
         public String id_aluno { get; set; }
