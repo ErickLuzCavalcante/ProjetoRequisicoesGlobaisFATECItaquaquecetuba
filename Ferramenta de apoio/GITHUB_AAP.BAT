@@ -90,7 +90,11 @@ cd \
 cd git
 ERASE /S /Q %pastaprojeto%
 RD /S /Q %pastaprojeto%
-echo +   +   F I N A L I Z A D O   +   +
+Echo.
+echo Caso não execute o download automatico depois desta tela
+echo realize o LOGOFF ou REINICE O COMPUTADOR e tente novamente
+echo esta opcao.
+PAUSE
 )
 
 
@@ -115,7 +119,11 @@ echo.
 echo.
 echo.
 ECHO ---------------------------------------------------------------------
-echo CASO TENHA TIDO ALGUMA FALHA NO DOWNLOAD DO PROJETO
+ECHO TEM QUE APARECER DONE EM TODAS AS LINHAS, SE HOUVER ALGUMA 
+ECHO IRA APARECER FALL OU OUTRA MENSAGEM DE ERRO NO STATUS DOS 
+ECHO DOWNLOAD.
+ECHO.
+echo CASO TENHA TIDO ALGUMA FALHA AO BAIXAR O PROJETO
 echo SIGA OS SEGUINTES PASSOS:
 echo.
 echo Passo 1: QUANDO IRMOS PARA A TELA DE MENU DESTE APLICATIVO
