@@ -1,5 +1,4 @@
 @echo off
-mode 60,40
 TITLE CONTROLE DO GITHUB 1.0
 set link_repositorio="https://github.com/ErickLuzCavalcante/ProjetoRequisicoesGlobaisFATECItaquaquecetuba"
 set pastaprojeto=ProjetoRequisicoesGlobaisFATECItaquaquecetuba
@@ -25,14 +24,14 @@ echo. Caso vc ja tenha feito isso, podemos seguir, basta precionar qualquer tecl
 echo.
 echo. att, Erick Cavalcante -  BackEnd
 echo.
-echo. PS. Esse aplicativo foi feito em um dia, qualquer bug, favor me reportar
+echo. PS. Qualquer bug, favor me reportar
 pause
 @md C:\GIT>nul
 ECHO PASTA GIT EM C: CRIADA 
 PING -T 0.0.0.0>nul
 CALL :verificaPastaAtual
 )
-
+mode 60,40
 :Menu
 
 cls
