@@ -91,19 +91,14 @@ set CERTEZA=0
 Set /p CERTEZA=" >> "
 if  %CERTEZA% EQU 1 (
 echo +   +   B A I X A N D O   +   + 
-cd %pastaprojeto%
-git add .
-git commit -m "Realizado sincronizacao com o servidor"
-git status
-git pull
-git reset --hard origin~
-CD..
+cd \
+cd git
+ERASE /S /Q %pastaprojeto%
+RD /S /Q %pastaprojeto%
 echo +   +   F I N A L I Z A D O   +   +
 )
-ECHO.
-ECHO.
-echo VOLTANDO PARA O MENU
-PAUSE
+
+
 GOTO :MENU
 
 
