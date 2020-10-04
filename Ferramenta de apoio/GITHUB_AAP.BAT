@@ -26,7 +26,7 @@ echo. att, Erick Cavalcante -  BackEnd
 echo.
 echo. PS. Esse aplicativo foi feito em um dia, qualquer bug, favor me reportar
 pause
-md C:\GIT
+@md C:\GIT>nul
 ECHO PASTA GIT EM C: CRIADA 
 PING -T 0.0.0.0>nul
 CALL :verificaPastaAtual
@@ -42,8 +42,8 @@ cls
 CALL :verificaPastaAtual
 
 ECHO OPCOES:
-echo. 1. Criar ponto de restauracao LOCALMENTE
-echo. 2. Subir os pontos de restauracao para o GITHub
+echo. 1. CRIAR PONTO DE RESTAURACAO NA SUA MAQUINA
+echo. 2. SUBIR NA NUVEM OS PONTOS DE RESTAURACAO
 echo. 3. Abrir pasta do projeto
 echo. 4. Deixar conforme o GITHUB
 echo. 0. Sair
@@ -62,15 +62,10 @@ cls
 CALL :verificaPastaAtual
 mode 100, 40
 
-ECHO ESTA FUNCAO SERVE PARA ATUALIZAR SUA MAQUINA COM OS ULTIMOS UPDATES DO
-ECHO PROJETO NO GITHUB
-echo. 
-echo QUALQUER PONTO QUE NAO ESTEJA SALVO REMOTAMENTE, SERA DESFEITO
-echo isso eh aquelas que nao tenham sido sincronizadas pela opcao 1 e depois a 2
-echo.
-ECHO ESSA FUNCAO ALTERA OS ARQUIVOS DA PASTA QUE NAO ESTAO IGUAIS AO GITHUB
+ECHO NESTA DO PROJETO SERA DELETADA DA SUA MAQUINA
+ECHO E SERA REALIZADO UM NOVO DONWLOAD NO GITHUB
 ECHO.
-ECHO ANTES DE USAR TENHA CERTEZA QUE SALVOU AS MODIFICACOES NECESSARIA 
+ECHO PARA SALVAR SEUS DADOS NO SERVIDOR ULTILIZE A OPCAO 1
 ECHO NO SERVIDOR. opcao 1 e depois a 2
 ECHO.
 ECHO ---------------------------------------------------------------------
@@ -190,7 +185,7 @@ GOTO :MENU
 
 :verificaPastaAtual
 cd C:\
-@md git
+@md git>nul
 @cd git
 if %CD%  NEQ C:\GIT (
 mode 80, 14
@@ -204,4 +199,9 @@ exit
 if not exist %pastaprojeto% (
 call :clonar
 )
+cd %pastaprojeto%
+cls
+echo Sincronizando
+git pull
+cd ..
 goto :eof
