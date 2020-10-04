@@ -8,11 +8,11 @@ namespace requisicoesGlobais.Classes
     public class Alunos 
     {
         // Atributos com geters e seters 
-        public String id_aluno { get; set; }
-        public String ra_aluno { get; set; }
-        public String turno_aluno { get; set; }
-        public String id_curso { get; set; }
-        public String id_usuario { get; set; }
+        private String id_aluno { get; set; }
+        private String ra_aluno { get; set; }
+        private String turno_aluno { get; set; }
+        private String id_curso { get; set; }
+        private String id_usuario { get; set; }
       
         // Metodos 
         public void cadastrar_aluno()
