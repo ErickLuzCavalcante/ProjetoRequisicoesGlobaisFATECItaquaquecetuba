@@ -181,8 +181,8 @@ if  %CERTEZA% EQU 1 (
 echo +   +   I N I C I A N D O   +   +
 cd %pastaprojeto%  
 git checkout master
-git pull origin master
-git push 
+git pull --rebase origin master
+git push -f origin master
 CD ..
 echo +   +   F I N A L I Z A D O   +   +
 )
@@ -210,7 +210,3 @@ if not exist %pastaprojeto% (
 call :clonar
 )
 goto :eof
-
-
-
-
