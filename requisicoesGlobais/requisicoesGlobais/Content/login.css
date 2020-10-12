@@ -1,0 +1,123 @@
+﻿body {
+    background-color: #fff;
+}
+
+/* CONTAINER LOGIN/CADASTRO */
+.card {
+    box-sizing: border-box;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+/* SUPERIOR CARD */
+.superior {
+    margin-bottom: 50px;
+}
+
+    .superior img {
+        display: block;
+        margin: 0 auto;
+        width: 200px;
+    }
+
+/* CONTAINER CADASTRO */
+.cadastro {
+    display: none;
+}
+
+/* CAMPOS */
+.campo {
+    margin-bottom: 25px;
+}
+
+    .campo label {
+        font-size: 14px;
+        display: block;
+        color: #585858;
+        font-weight: 300;
+        margin-bottom: 2px;
+    }
+
+    .campo input {
+        width: 100%;
+        appearance: none;
+        border: none;
+        background-color: #ecf0f1;
+        height: 42px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+/* Botões */
+.botoes-lc {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    border: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    height: 37px;
+}
+
+    .btn.danger {
+        background-color: #e73c3c;
+        color: #fff;
+    }
+
+    .btn.light {
+        background-color: transparent;
+        margin-bottom: 0;
+    }
+
+@media screen and (min-width: 662px) {
+    body {
+        background-color: #ecf0f1;
+    }
+
+    .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-cadastro {
+        padding: 30px 60px;
+    }
+
+    .login {
+        width: 400px;
+    }
+
+    .cadastro {
+        width: 550px;
+    }
+
+    .divisao-campos {
+        display: flex;
+        gap: 20px;
+    }
+
+        .divisao-campos .campo {
+            width: 100%;
+        }
+
+    /* Botões Login */
+    .botoes-lc {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .btn {
+        width: 130px;
+    }
+}

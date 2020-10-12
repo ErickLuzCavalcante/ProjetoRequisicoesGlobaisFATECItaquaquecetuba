@@ -20,11 +20,12 @@ namespace requisicoesGlobais.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult TESTE1()
         {
-            ViewBag.Message = "Your contact page.";
 
             return View();
         }
+       
+
     }
 }

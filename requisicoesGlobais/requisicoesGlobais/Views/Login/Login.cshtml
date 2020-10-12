@@ -1,0 +1,88 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/Content/reset.css" />
+    <link rel="stylesheet" href="~/Content/main.css" />
+    <link rel="stylesheet" href="~/Content/login.css" />
+    <title>APP - ALMIR - LOGIN</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="superior">
+                <img src="~/img/fatec-logo.png" alt="Logo Fatec" />
+            </div>
+
+            <div class="login">
+                <div class="campos">
+                    <div class="campo cpf">
+                        <label for="cpf">CPF</label>
+                        <input type="text" name="cpf" id="cpf" />
+                    </div>
+                    <div class="campo senha">
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" id="senha" />
+                    </div>
+                </div>
+
+                <div class="botoes-lc">
+                    <button class="btn danger" type="submit">Entrar</button>
+                    <button class="btn light" id="btnAbrirCadastro">Cadastrar</button>
+                </div>
+            </div>
+
+            <div class="cadastro">
+                <div class="campos-cadastro">
+                    <div class="divisao-campos">
+                        <div class="campo nome">
+                            <label for="nome">Nome</label>
+                            <input type="text" name="nome" id="nome" />
+                        </div>
+                        <div class="campo email">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" id="email" />
+                        </div>
+                    </div>
+
+                    <div class="divisao-campos">
+                        <div class="campo nome">
+                            <label for="cpfCad">CPF</label>
+                            <input type="text" name="cpfCad" id="cpfCad" />
+                        </div>
+                        <div class="campo email">
+                            <label for="ra">RA</label>
+                            <input type="text" name="ra" id="ra" />
+                        </div>
+                    </div>
+
+                    <div class="divisao-campos">
+                        <div class="campo nome">
+                            <label for="senhaCad">Senha</label>
+                            <input type="password" name="senhaCad" id="senhaCad" />
+                        </div>
+                        <div class="campo email">
+                            <label for="confirmeSenha">Confirme a senha</label>
+                            <input type="password"
+                                   name="confirmeSenha"
+                                   id="confirmeSenha" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="botoes-lc">
+                    <button class="btn danger" type="submit">Cadastrar</button>
+                    <button class="btn light" id="btnAbrirLogin">Entrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="~/Scripts/login.js"></script>
+</html>

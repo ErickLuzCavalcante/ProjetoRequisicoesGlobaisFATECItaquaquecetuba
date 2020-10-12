@@ -79,7 +79,6 @@ C:\GIT\ProjetoRequisicoesGlobaisFATECItaquaquecetuba\requisicoesGlobais\requisic
 C:\GIT\ProjetoRequisicoesGlobaisFATECItaquaquecetuba\requisicoesGlobais\requisicoesGlobais\bin\pt-br\System.Web.WebPages.resources.dll
 C:\GIT\ProjetoRequisicoesGlobaisFATECItaquaquecetuba\requisicoesGlobais\requisicoesGlobais\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
 C:\GIT\ProjetoRequisicoesGlobaisFATECItaquaquecetuba\requisicoesGlobais\requisicoesGlobais\bin\pt-br\System.Web.WebPages.Razor.resources.dll
-C:\GIT\ProjetoRequisicoesGlobaisFATECItaquaquecetuba\requisicoesGlobais\requisicoesGlobais\obj\Debug\requisicoesGlobais.csprojAssemblyReference.cache
 C:\GIT\ProjetoRequisicoesGlobaisFATECItaquaquecetuba\requisicoesGlobais\requisicoesGlobais\obj\Debug\requisicoesGlobais.csproj.CoreCompileInputs.cache
 C:\GIT\ProjetoRequisicoesGlobaisFATECItaquaquecetuba\requisicoesGlobais\requisicoesGlobais\obj\Debug\requisicoesGlobais.csproj.CopyComplete
 C:\GIT\ProjetoRequisicoesGlobaisFATECItaquaquecetuba\requisicoesGlobais\requisicoesGlobais\obj\Debug\requisicoesGlobais.dll
@@ -93,3 +92,8 @@ C:\GIT\ProjetoRequisicoesGlobaisFATECItaquaquecetuba\requisicoesGlobais\requisic
 C:\GIT\ProjetoRequisicoesGlobaisFATECItaquaquecetuba\requisicoesGlobais\requisicoesGlobais\bin\pt-br\System.Net.Http.Formatting.resources.dll
 C:\GIT\ProjetoRequisicoesGlobaisFATECItaquaquecetuba\requisicoesGlobais\requisicoesGlobais\bin\pt-br\System.Web.Http.resources.dll
 C:\GIT\ProjetoRequisicoesGlobaisFATECItaquaquecetuba\requisicoesGlobais\requisicoesGlobais\bin\pt-br\System.Web.Http.WebHost.resources.dll
+C:\GIT\ProjetoRequisicoesGlobaisFATECItaquaquecetuba\requisicoesGlobais\requisicoesGlobais\bin\EntityFramework.dll
+C:\GIT\ProjetoRequisicoesGlobaisFATECItaquaquecetuba\requisicoesGlobais\requisicoesGlobais\bin\EntityFramework.SqlServer.dll
+C:\GIT\ProjetoRequisicoesGlobaisFATECItaquaquecetuba\requisicoesGlobais\requisicoesGlobais\bin\EntityFramework.xml
+C:\GIT\ProjetoRequisicoesGlobaisFATECItaquaquecetuba\requisicoesGlobais\requisicoesGlobais\bin\EntityFramework.SqlServer.xml
+C:\GIT\ProjetoRequisicoesGlobaisFATECItaquaquecetuba\requisicoesGlobais\requisicoesGlobais\obj\Debug\requisicoesGlobais.csprojAssemblyReference.cache
