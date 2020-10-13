@@ -1,11 +1,12 @@
-﻿using System;
+﻿using aapSistemasIntegrados;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
  
 namespace requisicoesGlobais.Classes
 {
-    public class Alunos 
+    public class Alunos : Usuarios
     {
         // Atributos com geters e seters 
         private String id_aluno { get; set; }

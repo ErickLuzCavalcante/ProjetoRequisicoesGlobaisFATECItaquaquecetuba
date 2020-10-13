@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace aapSistemasIntegrados
 {
-    class Usuarios
+    public class Usuarios
     {
         //declaração de variáveis com gets e sets
         private int id_login { get; set; }
