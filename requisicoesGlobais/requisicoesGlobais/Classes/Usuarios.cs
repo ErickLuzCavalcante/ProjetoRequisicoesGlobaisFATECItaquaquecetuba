@@ -4,23 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace aapSistemasIntegrados
+namespace requisicoesGlobais.Classes
 {
-    public class Usuarios
-    {
-        //declaração de variáveis com gets e sets
-        private int id_login { get; set; }
-        private int nome_usuario { get; set; }
-        private string email_usuario { get; set; }
-        private string cpf_usuario { get; set; }
-        private string telefone_usuario { get; set; }
-        private string senha_usuario { get; set; }
-        private DateTime data_criacao_usuario { get; set; }
-        private DateTime data_atualizacao_usuario { get; set; }
-        private int status_usuario { get; set; }
+	public class Usuarios
+	{
+		//declaração de variáveis com gets e sets
+		private int id_login { get; set; }
+		public int nome_usuario { get; set; }
+		public string email_usuario { get; set; }
+		public string cpf_usuario { get; set; }
+		public string telefone_usuario { get; set; }
+		public string senha_usuario { get; set; }
+		private DateTime data_criacao_usuario { get; set; }
+		private DateTime data_atualizacao_usuario { get; set; }
+		private int status_usuario { get; set; }
+		public string ra_usuario { get; set; }
 
-        //Métodos get e set das variáveis
-        /*
+		//Métodos get e set das variáveis
+		/*
         public int Id_login
         {
             get { return id_login; }
@@ -67,24 +68,24 @@ namespace aapSistemasIntegrados
             set { status_usuario = value; }
         }
         */
-        //Métodos da classe
-        public void cadastrar_usuario() 
-        {
-        
-        }
-        public void inativar_usuario()
-        {
+		//Métodos da classe
+		public void cadastrar_usuario()
+		{
 
-        }
+		}
+		public void inativar_usuario()
+		{
 
-        public void consultar_usuario()
-        {
-            
-        }
-        public void alterar_senha_usuario()
-        {
+		}
 
-        }
-        
-    }
+		public void consultar_usuario()
+		{
+
+		}
+		public void alterar_senha_usuario()
+		{
+
+		}
+
+	}
 }
