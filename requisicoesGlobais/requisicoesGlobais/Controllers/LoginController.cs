@@ -19,32 +19,23 @@ namespace requisicoesGlobais.Controllers
 			return View();
 		}
 		[HttpPost]
-		public ActionResult Login(Usuarios us)
+		public ActionResult Login(Usuarios usuarios)
 		{
-			if (us.cpf_usuario == "123")
+			
+			if (usuarios.cpf_usuario == "123")
 			{
 
 				return Redirect("Requerimento/Requerimento");
 			}
 			else
 			{
-				var teste = us;
+				var teste = usuarios;
 			}
 			return View();
 		}
-		public ActionResult Cadastro(Usuarios us)
-		{
-			if (us.cpf_usuario == "123")
-			{
 
-				return Redirect("Login/Login");
-			}
-			else
-			{
-				var teste = us;
-			}
-			return View();
-		}
+	
+
 
 
 

@@ -9,14 +9,15 @@ namespace requisicoesGlobais.Classes
     public class Cnn
     {
 
-        /*
+		/*
          * Classe de conexao ao banco de dados
          * Erick Luz Cavalcante
          * 
          */
 
-        // String de conexao, inidica como o sistema deve conectar ao banco de dados
-        private string stringConexao = "Data Source=localhost;Initial Catalog=db_aap_sistemas_integrados;Integrated Security=True";
+		// String de conexao, inidica como o sistema deve conectar ao banco de dados
+
+		string stringConexao = "Data Source=localhost;Initial Catalog=db_aap_sistemas_integrados;Integrated Security=True";
 
 
 

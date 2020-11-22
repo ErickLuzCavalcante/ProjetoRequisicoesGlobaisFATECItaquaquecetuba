@@ -138,7 +138,9 @@
     <Compile Include="Classes\Alunos.cs" />
     <Compile Include="Classes\Arquivos.cs" />
     <Compile Include="Classes\Cnn.cs" />
+    <Compile Include="Classes\DB.cs" />
     <Compile Include="Classes\Usuarios.cs" />
+    <Compile Include="Controllers\CadastrarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RequerimentoController.cs" />
@@ -192,7 +194,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Requerimento\Requerimento.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
-    <Content Include="Views\Login\Cadastro.cshtml" />
+    <Content Include="Views\Cadastrar\Cadastrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

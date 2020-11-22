@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace requisicoesGlobais.Classes
 {
 	public class Usuarios
 	{
+		
 		//declaração de variáveis com gets e sets
 		private int id_login { get; set; }
 		public int nome_usuario { get; set; }
@@ -15,9 +17,9 @@ namespace requisicoesGlobais.Classes
 		public string cpf_usuario { get; set; }
 		public string telefone_usuario { get; set; }
 		public string senha_usuario { get; set; }
-		private DateTime data_criacao_usuario { get; set; }
-		private DateTime data_atualizacao_usuario { get; set; }
-		private int status_usuario { get; set; }
+		public DateTime data_criacao_usuario { get; set; }
+		public DateTime data_atualizacao_usuario { get; set; }
+		public int status_usuario { get; set; }
 		public string ra_usuario { get; set; }
 
 		//Métodos get e set das variáveis
@@ -71,7 +73,6 @@ namespace requisicoesGlobais.Classes
 		//Métodos da classe
 		public void cadastrar_usuario()
 		{
-
 		}
 		public void inativar_usuario()
 		{
