@@ -21,11 +21,6 @@ body {
   width: 200px;
 }
 
-/* CONTAINER CADASTRO */
-.cadastro {
-  display: none;
-}
-
 /* CAMPOS */
 .campo {
   margin-bottom: 25px;
