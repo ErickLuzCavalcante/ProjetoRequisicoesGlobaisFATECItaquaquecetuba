@@ -81,22 +81,20 @@ namespace requisicoesGlobais2.Classes
 
         }
 
-        public void alterar_aluno(String RA)
+        public void alterar_aluno()
         {
             // Cria o objeto que controla o banco de dados
             Classes.Cnn bancoDados = new Classes.Cnn();
 
             // Comando que sera passado para o banco de dados
             string comandoDeInsercao = "UPDATE aluno " +
-                "SET ra_aluno = ra_aluno," +
-                               "turno_aluno = turno_aluno," +
-                               "id_curso = id_curso," +
-                               "id_usuario = id_usuario" +
-                               "WHERE < Critérios de Pesquisa,,> ";
+                "SET turno_aluno = '"+turno_aluno+"'," +
+                               "id_curso = "+id_curso+"," +
+                               "id_usuario = "+id_usuario +
+                               "WHERE ra_aluno ="+ra_aluno;
 
             //Realiza o comando no banco de dados
             bancoDados.Entrada(comandoDeInsercao);
-
         }
 
 
