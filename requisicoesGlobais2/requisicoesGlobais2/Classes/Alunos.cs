@@ -95,8 +95,63 @@ namespace requisicoesGlobais2.Classes
 
             //Realiza o comando no banco de dados
             bancoDados.Entrada(comandoDeInsercao);
+
         }
 
+        private Classes.Cnn bancoDados = new Classes.Cnn();
+        public void listar_todos_curso()
+        {
+            // Cria o objeto que controla o banco de dados
+
+
+            // Comando que sera passado para o banco de dados
+            /* -> O que o Comando SQL faz?
+             * O comando irá usar o valor do getId_curso para selecionar 
+             * a linha e alterar o Nome_curso 
+             * pelo valor inserido no getNome_curso() 
+             */
+
+            string comandoSelecao = "SELECT " +
+                "id_aluno,ra_aluno,turno_aluno,id_curso,id_usuario" +
+                " FROM aluno where " +
+                "ra_aluno = " + ra_aluno;
+;
+
+            //Realiza o comando no banco de dados
+            bancoDados.Saida(comandoSelecao);
+            this.AtualizarCampos();
+
+        }
+        /*Metodos auxiliares de pesquisa*/
+
+        // Pula para o proximo registro
+        // Quando chegar a false, significa que chegou no ultimo registro
+        // Nao alterar 
+        public Boolean proximo()
+        {
+            if (bancoDados.carregarRegistro())
+            {
+                this.AtualizarCampos(); // Atualiza os campos confome o registro
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+        // Atualizar conforme a classe 
+        private void AtualizarCampos()
+        {
+            // Campos conforme o indice
+            id_aluno = int.Parse(bancoDados.GetAtributo("id_aluno"));
+            ra_aluno = bancoDados.GetAtributo("ra_aluno");
+            turno_aluno = bancoDados.GetAtributo("turno_aluno");
+            id_curso = int.Parse(bancoDados.GetAtributo("id_curso"));
+            id_usuario = int.Parse(bancoDados.GetAtributo("id_usuario"));
+
+
+        }
 
 
     }

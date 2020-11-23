@@ -173,6 +173,7 @@
     <Compile Include="Classes\Arquivos.cs" />
     <Compile Include="Classes\Cnn.cs" />
     <Compile Include="Classes\Cursos.cs" />
+    <Compile Include="Classes\Requerimentos.cs" />
     <Compile Include="Classes\Usuarios.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
