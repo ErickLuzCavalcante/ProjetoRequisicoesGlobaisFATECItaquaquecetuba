@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
@@ -51,6 +52,7 @@ namespace requisicoesGlobais2.Classes
 
             //Realiza o comando no banco de dados
             bancoDados.Entrada(comandoDeInsercao);
+
         }
 
         public void alterar_curso()
@@ -66,14 +68,38 @@ namespace requisicoesGlobais2.Classes
              */
 
             string comandoDeInsercao = "UPDATE curso " +
-                "SET nome_curso = '"+getNome_curso()+"'" +
-                " WHERE id_curso = "+getId_curso();
+                                       "SET nome_curso = '" + getNome_curso() + "'" +
+                                       " WHERE id_curso = " + getId_curso();
 
             //Realiza o comando no banco de dados
             bancoDados.Entrada(comandoDeInsercao);
         }
 
+        private Classes.Cnn bancoDados = new Classes.Cnn();
+        public void listar_todos_curso()
+        {
+            // Cria o objeto que controla o banco de dados
+            
 
+            // Comando que sera passado para o banco de dados
+            /* -> O que o Comando SQL faz?
+             * O comando irá usar o valor do getId_curso para selecionar 
+             * a linha e alterar o Nome_curso 
+             * pelo valor inserido no getNome_curso() 
+             */
 
+            string comandoSelecao = "SELECT " +
+                                       "id_curso,nome_curso " +
+                                       "FROM curso";
+
+            //Realiza o comando no banco de dados
+            bancoDados.Saida(comandoSelecao);
+            Nome_curso = bancoDados.GetAtributo(0);
+        }
+        
+        public void proximo()
+        {
+            bancoDados.carregarRegistro();
+        }
     }
 }

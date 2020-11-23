@@ -19,10 +19,10 @@ namespace requisicoesGlobais2
 
             /*Area de teste*/
             Classes.Cursos curso = new Classes.Cursos();
-            curso.setId_curso(1);
-            curso.setNome_curso("Bolinho");
-            curso.alterar_curso();
-
+            curso.listar_todos_curso();
+            Response.Write("<script>alert('" + curso.getNome_curso() + "')</script>");
+            curso.proximo();
+            Response.Write("<script>alert('" + curso.getNome_curso() + "')</script>");
 
         }
     }
