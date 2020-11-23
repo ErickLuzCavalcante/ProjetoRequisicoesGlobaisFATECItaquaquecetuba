@@ -43,7 +43,7 @@ namespace requisicoesGlobais2.Classes
                 return false;
             }
         }
-
+        // Realiza consultas no banco de dados
         public void Saida(String ComandoSQL)
         {
 
@@ -59,15 +59,17 @@ namespace requisicoesGlobais2.Classes
             //conn.Close();
 
         }
-
-        public String GetAtributo(int indiceAtributo)
+        // Metodo auxiliar utilizado para selecionar o atributo no no banco de dados
+        public String GetAtributo(String Atributo)
         {
-            return String.Format("{0}", this.reader.GetValue(indiceAtributo));
+            return String.Format("{0}", this.reader[Atributo]);
         }
 
-        public void carregarRegistro()
+        // Passa para o proximo registro do banco de dados
+        // Quando retorna false, significa que chegou no fim da tabela
+        public Boolean carregarRegistro()
         {
-             this.reader.Read();
+             return this.reader.Read();
         }
     }
 }

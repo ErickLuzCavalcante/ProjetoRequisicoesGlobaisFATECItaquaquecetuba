@@ -8,10 +8,10 @@ namespace requisicoesGlobais2.Classes
     public class Alunos
     {
         // Atributos com get e set
-        private int id_aluno { get; set; }
-        private String cpf { get; set; }
-        private String nome_aluno { get; set; }
-        private int ra_aluno { get; set; }
+        private int id_aluno;
+        private String cpf;
+        private String nome_aluno;
+        private int ra_aluno;
 
 
         //SETs 
