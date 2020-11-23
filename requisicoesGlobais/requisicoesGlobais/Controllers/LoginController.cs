@@ -19,17 +19,22 @@ namespace requisicoesGlobais.Controllers
 			return View();
 		}
 		[HttpPost]
-		public ActionResult Login(Usuarios usuarios)
+		public ActionResult Login(Usuarios usuario)
 		{
-			
-			if (usuarios.cpf_usuario == "123")
-			{
 
+			DBUsuario db = new DBUsuario();
+			var usuarioRetorno = db.buscarUsuario(usuario);
+
+
+
+			if (usuarioRetorno != null)
+			{
+				Session["Usuario"] = usuarioRetorno;
 				return Redirect("Requerimento/Requerimento");
 			}
 			else
 			{
-				var teste = usuarios;
+				var teste = usuario;
 			}
 			return View();
 		}

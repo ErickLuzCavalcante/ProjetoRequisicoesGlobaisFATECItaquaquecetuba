@@ -135,11 +135,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Classes\Alunos.cs" />
-    <Compile Include="Classes\Arquivos.cs" />
-    <Compile Include="Classes\Cnn.cs" />
-    <Compile Include="Classes\DB.cs" />
-    <Compile Include="Classes\Usuarios.cs" />
+    <Compile Include="Models\Alunos.cs" />
+    <Compile Include="Models\Arquivos.cs" />
+    <Compile Include="Models\Cnn.cs" />
+    <Compile Include="Models\DBRequerimento.cs" />
+    <Compile Include="Models\DBUsuario.cs" />
+    <Compile Include="Models\Requerimento.cs" />
+    <Compile Include="Models\TipoRequerimento.cs" />
+    <Compile Include="Models\Usuarios.cs" />
     <Compile Include="Controllers\CadastrarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -198,7 +201,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

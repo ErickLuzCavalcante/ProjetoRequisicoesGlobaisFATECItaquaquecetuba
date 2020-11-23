@@ -21,8 +21,12 @@ namespace requisicoesGlobais.Controllers
 			try
 			{
 				//instancia a classe do banco de dados 
-				DB banco = new DB();
+				DBUsuario banco = new DBUsuario();
 				//executando  a função cadastro  
+
+				usuarios.data_criacao_usuario = DateTime.Now;
+				usuarios.data_atualizacao_usuario = DateTime.Now;
+
 				banco.cadastro(usuarios);
 				return View("../Login/Login");
 			}

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using requisicoesGlobais.Classes;
+using requisicoesGlobais.Models;
 
 namespace requisicoesGlobais.Controllers
 {
@@ -12,7 +13,18 @@ namespace requisicoesGlobais.Controllers
         // GET: Requerimento
         public ActionResult Requerimento()
         {
-            return View();
+            if (Session["Usuario"] != null)
+            {
+
+                var db = new DBRequerimento();
+
+                var tipos = db.buscarTipos();
+
+                return View();
+            }
+
+            return Redirect("Login");
+
         }
     }
 }

@@ -4,17 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace requisicoesGlobais.Classes
 {
 	public class Usuarios
 	{
-		
-		//declaração de variáveis com gets e sets
+
+        //declaração de variáveis com gets e sets
 		private int id_login { get; set; }
-		public int nome_usuario { get; set; }
+		public string nome_usuario { get; set; }
 		public string email_usuario { get; set; }
-		public string cpf_usuario { get; set; }
+        public string cpf_usuario { get; set; }
 		public string telefone_usuario { get; set; }
 		public string senha_usuario { get; set; }
 		public DateTime data_criacao_usuario { get; set; }
