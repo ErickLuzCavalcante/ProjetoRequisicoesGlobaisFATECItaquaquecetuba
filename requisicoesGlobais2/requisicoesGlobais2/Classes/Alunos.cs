@@ -9,78 +9,94 @@ namespace requisicoesGlobais2.Classes
     {
         // Atributos com get e set
         private int id_aluno;
-        private String cpf;
-        private String nome_aluno;
-        private int ra_aluno;
+        private String ra_aluno;
+        private String turno_aluno;
+        private int id_curso;
+        private int id_usuario;
 
-
-        //SETs 
-
-        public void set_id_aluno(int id) {
-            this.id_aluno = id;
-        }
-
-        public void set_CPF(String cpf){
-            this.cpf = cpf;
-        }
-
-        public void set_nome_aluno(String nome){
-            this.nome_aluno = nome;
-        }
-
-        public void set_ra_aluno(int ra){
-            this.ra_aluno = ra;
-        }
 
         //GETs 
 
-
-        public int get_id_alunos(){
+        public int get_id_aluno()
+        {
             return this.id_aluno;
         }
 
-        public String get_CPF(){
-            return this.cpf;
-        }
-
-        public String get_nome_aluno()
-        {
-            return this.nome_aluno;
-        }
-
-        public int get_ra_aluno()
+        public String get_ra_aluno()
         {
             return this.ra_aluno;
+        }
+        public String get_turno_aluno()
+        {
+            return this.turno_aluno;
+        }
+        public int get_id_curso()
+        {
+            return this.id_curso;
+        }
+        public int get_id_usuario()
+        {
+            return this.id_usuario;
+        }
+
+        //SETs 
+        public void set_id_aluno(int id_aluno)
+        {
+            this.id_aluno = id_aluno;
+        }
+
+        public void set_ra_aluno(String ra_aluno)
+        {
+            this.ra_aluno = ra_aluno;
+        }
+
+        public void set_turno_aluno(String turno_aluno)
+        {
+            this.turno_aluno = turno_aluno;
+        }
+
+        public void set_id_curso(int id_curso)
+        {
+            this.id_curso = id_curso;
+        }
+
+        public void set_id_usuario(int id_usuario)
+        {
+            this.id_usuario = id_usuario;
         }
 
 
         // Metodos
-        public void cadastar_aluno()
+        public void cadastrar_aluno()
         {
-            Classes.Cnn banco_Dados = new Classes.Cnn();
-            string comando_De_Insercao_De_Alunos = "INSERT INTO aluno(nome_aluno) VALUES('" + this.nome_aluno + "')";
-            banco_Dados.Entrada(comando_De_Insercao_De_Alunos);
+            // Cria o objeto que controla o banco de dados
+            Classes.Cnn bancoDados = new Classes.Cnn();
+
+            // Comando que sera passado para o banco de dados
+            string comandoDeInsercao = "INSERT INTO aluno (ra_aluno, turno_aluno, id_curso, id_usuario) VALUES" +
+                                                         "('" + ra_aluno + "', '" + turno_aluno + "', " + id_curso + ", " + id_usuario + ")";
+
+            //Realiza o comando no banco de dados
+            bancoDados.Entrada(comandoDeInsercao);
+
         }
 
-
-        public void cadastrar_id() {
-            Classes.Cnn banco_Dados = new Classes.Cnn();
-            string comando_De_Insercao_De_ID = "INSERT INTO aluno(id_aluno) VALUES('"+this.id_aluno + "')";
-            banco_Dados.Entrada(comando_De_Insercao_De_ID);
-           
-        }
-
-        public void cadastrar_CPF(){
-            Classes.Cnn banco_Dados = new Classes.Cnn();
-            string comando_De_Insercao_De_CPF = "INSERT INTO aluno(cpf) VALUES('"+this.cpf+"')";
-            banco_Dados.Entrada(comando_De_Insercao_De_CPF);
-        }
-
-        public void cadastar_RA_Aluno()
+        public void alterar_aluno(String RA)
         {
-            Classes.Cnn banco_Dados = new Classes.Cnn();
-            string comando_De_Insercao_De_RA = "ISERT INTO  aluno(ra_aluno) VALUES('" + this.ra_aluno + "')";
-            banco_Dados.Entrada(comando_De_Insercao_De_RA);
+            // Cria o objeto que controla o banco de dados
+            Classes.Cnn bancoDados = new Classes.Cnn();
+
+            // Comando que sera passado para o banco de dados
+            string comandoDeInsercao = "UPDATE aluno " +
+                "SET ra_aluno = ra_aluno," +
+                               "turno_aluno = turno_aluno," +
+                               "id_curso = id_curso," +
+                               "id_usuario = id_usuario" +
+                               "WHERE < Critérios de Pesquisa,,> ";
+
+            //Realiza o comando no banco de dados
+            bancoDados.Entrada(comandoDeInsercao);
+
         }
 
 

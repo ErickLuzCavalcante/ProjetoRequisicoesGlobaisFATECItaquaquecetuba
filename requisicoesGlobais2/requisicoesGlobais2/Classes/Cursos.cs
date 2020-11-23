@@ -100,17 +100,26 @@ namespace requisicoesGlobais2.Classes
         /*Metodos auxiliares de pesquisa*/
 
         // Pula para o proximo registro
-        public void proximo()
+        // Quando chegar a false, significa que chegou no ultimo registro
+        // Nao alterar 
+        public Boolean proximo()
         {
-            bancoDados.carregarRegistro();
-            this.AtualizarCampos(); // Atualiza os campos confome o registro
+            if (bancoDados.carregarRegistro()) {
+                this.AtualizarCampos(); // Atualiza os campos confome o registro
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
         }
-
+        // Atualizar conforme a classe 
         private void AtualizarCampos()
         {
             // Campos conforme o indice
-            Nome_curso = bancoDados.GetAtributo("Nome_curso");
-          //  id_curso = int.Parse(bancoDados.GetAtributo(0));
+            Nome_curso = bancoDados.GetAtributo("Nome_curso"); 
+            id_curso = int.Parse(bancoDados.GetAtributo("id_curso"));
         }
     }
 }
