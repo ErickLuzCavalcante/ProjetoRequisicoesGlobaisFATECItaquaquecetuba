@@ -76,10 +76,11 @@ namespace requisicoesGlobais2.Classes
         }
 
         private Classes.Cnn bancoDados = new Classes.Cnn();
+
         public void listar_todos_curso()
         {
             // Cria o objeto que controla o banco de dados
-
+            Classes.Cnn bancoDados = new Classes.Cnn();
 
             // Comando que sera passado para o banco de dados
             /* -> O que o Comando SQL faz?
@@ -100,12 +101,18 @@ namespace requisicoesGlobais2.Classes
 
         public void proximo()
         {
+            // Cria o objeto que controla o banco de dados
+            Classes.Cnn bancoDados = new Classes.Cnn();
+
             bancoDados.carregarRegistro();
             this.AtualizarCampos();
         }
 
         private void AtualizarCampos()
         {
+            // Cria o objeto que controla o banco de dados
+            Classes.Cnn bancoDados = new Classes.Cnn();
+
             Nome_curso = bancoDados.GetAtributo(1);
             id_curso = int.Parse(bancoDados.GetAtributo(0));
         }
