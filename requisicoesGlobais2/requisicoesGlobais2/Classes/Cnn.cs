@@ -55,9 +55,8 @@ namespace requisicoesGlobais2.Classes
             conn.Open();
             //executa o comando com os parametros que foram adicionados acima
             this.reader = comando.ExecuteReader();
-            reader.;
-            
-            conn.Close();
+            reader.Read();
+            //conn.Close();
 
         }
 
@@ -68,7 +67,7 @@ namespace requisicoesGlobais2.Classes
 
         public void carregarRegistro()
         {
-             this.reader.NextResult();
+             this.reader.Read();
         }
     }
 }

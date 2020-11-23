@@ -19,6 +19,7 @@ namespace requisicoesGlobais2
 
             /*Area de teste*/
             Classes.Cursos curso = new Classes.Cursos();
+
             curso.listar_todos_curso();
             Response.Write("<script>alert('" + curso.getNome_curso() + "')</script>");
             curso.proximo();

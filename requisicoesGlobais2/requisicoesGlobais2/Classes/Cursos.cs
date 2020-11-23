@@ -79,7 +79,7 @@ namespace requisicoesGlobais2.Classes
         public void listar_todos_curso()
         {
             // Cria o objeto que controla o banco de dados
-            
+
 
             // Comando que sera passado para o banco de dados
             /* -> O que o Comando SQL faz?
@@ -94,12 +94,20 @@ namespace requisicoesGlobais2.Classes
 
             //Realiza o comando no banco de dados
             bancoDados.Saida(comandoSelecao);
-            Nome_curso = bancoDados.GetAtributo(0);
+            this.AtualizarCampos();
+
         }
-        
+
         public void proximo()
         {
             bancoDados.carregarRegistro();
+            this.AtualizarCampos();
+        }
+
+        private void AtualizarCampos()
+        {
+            Nome_curso = bancoDados.GetAtributo(1);
+            id_curso = int.Parse(bancoDados.GetAtributo(0));
         }
     }
 }
