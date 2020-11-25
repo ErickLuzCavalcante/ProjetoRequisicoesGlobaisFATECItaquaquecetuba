@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace requisicoesGlobais2.Classes
 {
@@ -40,6 +41,7 @@ namespace requisicoesGlobais2.Classes
             }
             catch (Exception e)
             {
+                Debug.WriteLine(ComandoSQL);
                 return false;
             }
         }

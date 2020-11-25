@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.ComponentModel.DataAnnotations.Schema;
 
+
 namespace requisicoesGlobais2.Classes
 {
     public class Usuarios
@@ -18,8 +19,8 @@ namespace requisicoesGlobais2.Classes
         public string cpf_usuario;
         public string telefone_usuario;
         public string senha_usuario;
-        public DateTime data_criacao_usuario;
-        public DateTime data_atualizacao_usuario;
+        public String data_criacao_usuario;
+        public String data_atualizacao_usuario;
         public int status_usuario;
 
         // Métodos GETs
@@ -48,11 +49,11 @@ namespace requisicoesGlobais2.Classes
         {
             return this.senha_usuario;
         }
-        public DateTime getData_criacao_usuario()
+        public String getData_criacao_usuario()
         {
             return this.data_criacao_usuario;
         }
-        public DateTime getData_atualizacao_usuario()
+        public String getData_atualizacao_usuario()
         {
             return this.data_atualizacao_usuario;
         }
@@ -88,11 +89,12 @@ namespace requisicoesGlobais2.Classes
         }
         public void setData_criacao_usuario(DateTime data_criacao_usuario)
         {
-            this.data_criacao_usuario = data_criacao_usuario;
+
+            this.data_criacao_usuario = data_criacao_usuario.ToString("d");
         }
         public void setData_atualizacao_usuario(DateTime data_atualizacao_usuario)
         {
-            this.data_atualizacao_usuario = data_atualizacao_usuario;
+            this.data_atualizacao_usuario = data_atualizacao_usuario.ToString("d");
         }
         public void setStatus_usuario(int status_usuario)
         {
@@ -106,10 +108,10 @@ namespace requisicoesGlobais2.Classes
             Classes.Cnn bancoDados = new Classes.Cnn();
 
             // Comando que sera passado para o banco de dados
-            string comandoDeInsercao = "INSERT INTO usuario (id_usuario, nome_usuario, email_usuario, cpf_usuario, telefone_usuario, " +
-                "senha_usuario, data_criacao_usuario, data_atualização_usuario, status_usuario)" +
-                " VALUES('" + this.nome_usuario + this.email_usuario + this.cpf_usuario + this.telefone_usuario + this.senha_usuario +
-                this.data_criacao_usuario + this.data_atualizacao_usuario + this.status_usuario+ "')";
+            string comandoDeInsercao = "INSERT INTO usuario (nome_usuario, email_usuario, cpf_usuario, telefone_usuario, " +
+                "senha_usuario, data_criacao_usuario, data_atualizacao_usuario, status_usuario)" +
+                " VALUES('" + this.nome_usuario +"','" + this.email_usuario + "','" + this.cpf_usuario + "','" + this.telefone_usuario + "','" + this.senha_usuario + "','" +
+                this.data_criacao_usuario + "','" + this.data_atualizacao_usuario + "'," + this.status_usuario+ ")";
 
             //Realiza o comando no banco de dados
             bancoDados.Entrada(comandoDeInsercao);
@@ -174,8 +176,8 @@ namespace requisicoesGlobais2.Classes
             cpf_usuario = bancoDados.GetAtributo("cpf_usuario");
             telefone_usuario = bancoDados.GetAtributo("telefone_usuario");
             senha_usuario = bancoDados.GetAtributo("senha_usuario");
-            data_criacao_usuario =DateTime.Parse(bancoDados.GetAtributo("data_criacao_usuario"));
-            data_atualizacao_usuario = DateTime.Parse(bancoDados.GetAtributo("data_atualizacao_usuario"));
+            data_criacao_usuario =bancoDados.GetAtributo("data_criacao_usuario");
+            data_atualizacao_usuario = bancoDados.GetAtributo("data_atualizacao_usuario");
             status_usuario = int.Parse(bancoDados.GetAtributo("status_usuario"));
         }
 
