@@ -137,11 +137,11 @@ namespace requisicoesGlobais2.Classes
              * pelo valor inserido no getNome_curso() 
              */
 
-            string comandoSelecao = "SELECT id_usuario, nome_usuario, email_usuario, cpf_usuario, telefone_usuario, senha_usuario, status_usuario " +
-                                       "FROM usuario";
+            string comandoSelecao = "SELECT * FROM usuario where id_usuario = "+id_login;
 
             //Realiza o comando no banco de dados
             bancoDados.Saida(comandoSelecao);
+            this.AtualizarCampos();
         }
         public void alterar_senha_usuario()
         {
@@ -154,7 +154,6 @@ namespace requisicoesGlobais2.Classes
 
             //Realiza o comando no banco de dados
             bancoDados.Entrada(comandoDeInsercao);
-            this.AtualizarCampos();
         }
         public void proximo()
         {
@@ -170,7 +169,7 @@ namespace requisicoesGlobais2.Classes
             // Cria o objeto que controla o banco de dados
             Classes.Cnn bancoDados = new Classes.Cnn();
 
-            id_login = int.Parse(bancoDados.GetAtributo("id_login"));
+            //id_login = int.Parse(bancoDados.GetAtributo("id_usuario"));
             nome_usuario = bancoDados.GetAtributo("nome_usuario");
             email_usuario = bancoDados.GetAtributo("email_usuario");
             cpf_usuario = bancoDados.GetAtributo("cpf_usuario");
