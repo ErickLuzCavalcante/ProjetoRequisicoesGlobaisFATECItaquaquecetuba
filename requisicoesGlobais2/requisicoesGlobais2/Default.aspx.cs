@@ -40,11 +40,11 @@ namespace requisicoesGlobais2
 
             //alunos.cadastrar_aluno();
 
-            usuario.setCpf_usuario("111");
-            usuario.setSenha_usuario("1111");
+            usuario.setCpf_usuario("41856915580");
+            usuario.setSenha_usuario("123456789Senh");
             usuario.verificaLogin();
 
-            Response.Write("<script>alert('" + alunos.get_ra_aluno() + "')</script>");
+            Response.Write("<script>alert('" + usuario.verificaLogin() + "')</script>");
 
 
         }

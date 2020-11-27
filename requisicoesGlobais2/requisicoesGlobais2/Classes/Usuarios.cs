@@ -146,17 +146,31 @@ namespace requisicoesGlobais2.Classes
             }
         }
 
-        public void verificaLogin()
+        public Boolean verificaLogin()
         {
+
+            
             String CPF_formulario=getCpf_usuario();
             String Senha_formulario = getSenha_usuario();
+            setCpf_usuario("");
+            setSenha_usuario("");
 
-            string comandoSelecao = "SELECT id_usuario,nome_usuario,email_usuario,cpf_usuario,telefone_usuario,senha_usuario,data_criacao_usuario,data_atualizacao_usuario,status_usuario FROM usuario where Cpf_usuario = '" + CPF_formulario +"' AND Senha_usuario = '"+Senha_formulario+ "'";
+            string comandoSelecao = "SELECT * FROM usuario " +
+                "where (convert(varchar, Cpf_usuario) =  '"+CPF_formulario+"')" +
+                " AND (convert (varchar,Senha_usuario) = '" + Senha_formulario + "')";
 
             //Realiza o comando no banco de dados
             if (bancoDados.Saida(comandoSelecao))
             {
                 this.AtualizarCampos();
+            }
+
+            if ((getCpf_usuario() == cpf_usuario) && (getSenha_usuario() == Senha_formulario) && (CPF_formulario!="")&&(Senha_formulario!=""))
+            {
+                return true;
+            }
+            else { 
+                return false; 
             }
 
         }
@@ -182,6 +196,7 @@ namespace requisicoesGlobais2.Classes
 
         private void AtualizarCampos()
         {
+            if (bancoDados.GetAtributo("id_usuario") != null) { 
     
             id_login = int.Parse(bancoDados.GetAtributo("id_usuario"));
             nome_usuario = bancoDados.GetAtributo("nome_usuario");
@@ -192,6 +207,7 @@ namespace requisicoesGlobais2.Classes
             data_criacao_usuario =bancoDados.GetAtributo("data_criacao_usuario");
             data_atualizacao_usuario = bancoDados.GetAtributo("data_atualizacao_usuario");
             status_usuario = int.Parse(bancoDados.GetAtributo("status_usuario"));
+            }
         }
 
     }
