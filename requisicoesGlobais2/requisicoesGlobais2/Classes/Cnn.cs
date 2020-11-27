@@ -49,7 +49,7 @@ namespace requisicoesGlobais2.Classes
             }
         }
         // Realiza consultas no banco de dados
-        public void Saida(String ComandoSQL)
+        public Boolean Saida(String ComandoSQL)
         {
             try
             {
@@ -65,11 +65,13 @@ namespace requisicoesGlobais2.Classes
                 Debug.WriteLine("Comando executado com sucesso");
                 Debug.WriteLine(ComandoSQL);
                 //conn.Close();
+                return true;
             }
             catch (Exception ex)
             {
                 Debug.WriteLine("Falha ao executar o comando SQL");
                 Debug.WriteLine(ComandoSQL);
+                return false;
             }
         }
         // Metodo auxiliar utilizado para selecionar o atributo no no banco de dados

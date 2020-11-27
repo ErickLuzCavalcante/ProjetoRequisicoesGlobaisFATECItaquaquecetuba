@@ -28,9 +28,25 @@ namespace requisicoesGlobais2
             
             Classes.Usuarios usuario = new Classes.Usuarios();
 
-            usuario.setId_login(1);
-            usuario.consultar_usuario();
-            Response.Write("<script>alert('" + usuario.getCpf_usuario() + "')</script>");
+            //usuario.setId_login(1);
+            //usuario.consultar_usuario();
+            //Response.Write("<script>alert('" + usuario.getCpf_usuario() + "')</script>");
+
+            Classes.Alunos alunos = new Classes.Alunos();
+
+            //alunos.set_id_usuario(usuario.getId_login());
+
+
+
+            //alunos.cadastrar_aluno();
+
+            usuario.setCpf_usuario("111");
+            usuario.setSenha_usuario("1111");
+            usuario.verificaLogin();
+
+            Response.Write("<script>alert('" + alunos.get_ra_aluno() + "')</script>");
+
+
         }
     }
 }

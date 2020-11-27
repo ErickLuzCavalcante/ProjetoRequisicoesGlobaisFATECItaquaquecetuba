@@ -144,8 +144,16 @@ namespace requisicoesGlobais2.Classes
             this.AtualizarCampos();
         }
 
-        public void verificaLogin(string Cpf, string Senha)
+        public void verificaLogin()
         {
+            String CPF_formulario=getCpf_usuario();
+            String Senha_formulario = getSenha_usuario();
+
+            string comandoSelecao = "SELECT id_usuario,nome_usuario,email_usuario,cpf_usuario,telefone_usuario,senha_usuario,data_criacao_usuario,data_atualizacao_usuario,status_usuario FROM usuario where Cpf_usuario = '" + CPF_formulario +"' AND Senha_usuario = '"+Senha_formulario+ "'";
+
+            //Realiza o comando no banco de dados
+            bancoDados.Saida(comandoSelecao);
+            this.AtualizarCampos();
 
         }
 

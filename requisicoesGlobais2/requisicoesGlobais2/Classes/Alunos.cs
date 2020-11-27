@@ -99,7 +99,7 @@ namespace requisicoesGlobais2.Classes
         }
 
         private Classes.Cnn bancoDados = new Classes.Cnn();
-        public void listar_todos_curso()
+        public void listar_por_idUsuario()
         {
             // Cria o objeto que controla o banco de dados
 
@@ -112,9 +112,9 @@ namespace requisicoesGlobais2.Classes
              */
 
             string comandoSelecao = "SELECT " +
-                "id_aluno,ra_aluno,turno_aluno,id_curso,id_usuario" +
+                "*" +
                 " FROM aluno where " +
-                "ra_aluno = " + ra_aluno;
+                "id_usuario = "+id_usuario;
 ;
 
             //Realiza o comando no banco de dados
@@ -149,11 +149,7 @@ namespace requisicoesGlobais2.Classes
             turno_aluno = bancoDados.GetAtributo("turno_aluno");
             id_curso = int.Parse(bancoDados.GetAtributo("id_curso"));
             id_usuario = int.Parse(bancoDados.GetAtributo("id_usuario"));
-
-
         }
-
-
     }
 
 
