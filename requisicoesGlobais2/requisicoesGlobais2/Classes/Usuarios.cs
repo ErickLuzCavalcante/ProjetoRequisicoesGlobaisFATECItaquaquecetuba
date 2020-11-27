@@ -170,8 +170,7 @@ namespace requisicoesGlobais2.Classes
 
         private void AtualizarCampos()
         {
-            // Cria o objeto que controla o banco de dados
-
+    
             id_login = int.Parse(bancoDados.GetAtributo("id_usuario"));
             nome_usuario = bancoDados.GetAtributo("nome_usuario");
             email_usuario = bancoDados.GetAtributo("email_usuario");
