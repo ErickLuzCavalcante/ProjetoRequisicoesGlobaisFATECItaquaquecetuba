@@ -125,11 +125,11 @@ namespace requisicoesGlobais2.Classes
                                        "SET status_usuario = '" + getStatus_usuario() + "'" +
                                        " WHERE id_usuario = " + getId_login() +" AND status_usuario = 0";
         }
-
+        Classes.Cnn bancoDados = new Classes.Cnn();
         public void consultar_usuario()
         {
             // Cria o objeto que controla o banco de dados
-            Classes.Cnn bancoDados = new Classes.Cnn();
+
             // Comando que sera passado para o banco de dados
             /* -> O que o Comando SQL faz?
              * O comando irá usar o valor do getId_curso para selecionar 
@@ -137,7 +137,7 @@ namespace requisicoesGlobais2.Classes
              * pelo valor inserido no getNome_curso() 
              */
 
-            string comandoSelecao = "SELECT * FROM usuario where id_usuario = "+id_login;
+            string comandoSelecao = "SELECT id_usuario,nome_usuario,email_usuario,cpf_usuario,telefone_usuario,senha_usuario,data_criacao_usuario,data_atualizacao_usuario,status_usuario FROM usuario where id_usuario = "+ getId_login();
 
             //Realiza o comando no banco de dados
             bancoDados.Saida(comandoSelecao);
@@ -167,9 +167,8 @@ namespace requisicoesGlobais2.Classes
         private void AtualizarCampos()
         {
             // Cria o objeto que controla o banco de dados
-            Classes.Cnn bancoDados = new Classes.Cnn();
 
-            //id_login = int.Parse(bancoDados.GetAtributo("id_usuario"));
+            id_login = int.Parse(bancoDados.GetAtributo("id_usuario"));
             nome_usuario = bancoDados.GetAtributo("nome_usuario");
             email_usuario = bancoDados.GetAtributo("email_usuario");
             cpf_usuario = bancoDados.GetAtributo("cpf_usuario");

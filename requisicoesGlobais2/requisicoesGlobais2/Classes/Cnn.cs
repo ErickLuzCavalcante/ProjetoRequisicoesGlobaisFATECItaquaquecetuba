@@ -78,7 +78,7 @@ namespace requisicoesGlobais2.Classes
             try
             {
                 Debug.WriteLine("Buscando: " + Atributo);
-                return String.Format("{0}", this.reader[Atributo]);
+                return this.reader[Atributo].ToString();
             }catch (Exception ex)
             {
                 Debug.WriteLine("Falha ao buscar atributo");
@@ -86,6 +86,7 @@ namespace requisicoesGlobais2.Classes
             }
             
         }
+
 
         // Passa para o proximo registro do banco de dados
         // Quando retorna false, significa que chegou no fim da tabela
