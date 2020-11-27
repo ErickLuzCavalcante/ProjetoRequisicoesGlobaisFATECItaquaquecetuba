@@ -150,10 +150,22 @@ namespace requisicoesGlobais2.Classes
         }
 
 
-        public void proximo()
+        /*Metodos auxiliares de pesquisa*/
+
+        // Pula para o proximo registro
+        // Quando chegar a false, significa que chegou no ultimo registro
+        public Boolean proximo()
         {
-            bancoDados.carregarRegistro();
-            this.AtualizarCampos();
+            if (bancoDados.carregarRegistro())
+            {
+                this.AtualizarCampos(); // Atualiza os campos confome o registro
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
 
         private void AtualizarCampos()
