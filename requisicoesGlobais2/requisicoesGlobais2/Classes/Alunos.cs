@@ -118,8 +118,10 @@ namespace requisicoesGlobais2.Classes
 ;
 
             //Realiza o comando no banco de dados
-            bancoDados.Saida(comandoSelecao);
-            this.AtualizarCampos();
+            if (bancoDados.Saida(comandoSelecao))
+            {
+                this.AtualizarCampos();
+            }
 
         }
         /*Metodos auxiliares de pesquisa*/

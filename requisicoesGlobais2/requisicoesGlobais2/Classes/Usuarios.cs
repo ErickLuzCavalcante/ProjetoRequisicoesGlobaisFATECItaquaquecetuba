@@ -140,8 +140,10 @@ namespace requisicoesGlobais2.Classes
             string comandoSelecao = "SELECT id_usuario,nome_usuario,email_usuario,cpf_usuario,telefone_usuario,senha_usuario,data_criacao_usuario,data_atualizacao_usuario,status_usuario FROM usuario where id_usuario = "+ getId_login();
 
             //Realiza o comando no banco de dados
-            bancoDados.Saida(comandoSelecao);
-            this.AtualizarCampos();
+            if (bancoDados.Saida(comandoSelecao))
+            {
+                this.AtualizarCampos();
+            }
         }
 
         public void verificaLogin()
@@ -152,8 +154,10 @@ namespace requisicoesGlobais2.Classes
             string comandoSelecao = "SELECT id_usuario,nome_usuario,email_usuario,cpf_usuario,telefone_usuario,senha_usuario,data_criacao_usuario,data_atualizacao_usuario,status_usuario FROM usuario where Cpf_usuario = '" + CPF_formulario +"' AND Senha_usuario = '"+Senha_formulario+ "'";
 
             //Realiza o comando no banco de dados
-            bancoDados.Saida(comandoSelecao);
-            this.AtualizarCampos();
+            if (bancoDados.Saida(comandoSelecao))
+            {
+                this.AtualizarCampos();
+            }
 
         }
 
