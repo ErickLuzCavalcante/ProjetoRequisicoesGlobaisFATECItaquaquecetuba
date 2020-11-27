@@ -125,7 +125,7 @@ namespace requisicoesGlobais2.Classes
                                        "SET status_usuario = '" + getStatus_usuario() + "'" +
                                        " WHERE id_usuario = " + getId_login() +" AND status_usuario = 0";
         }
-        Classes.Cnn bancoDados = new Classes.Cnn();
+        private Classes.Cnn bancoDados = new Classes.Cnn();
         public void consultar_usuario()
         {
             // Cria o objeto que controla o banco de dados
@@ -143,23 +143,15 @@ namespace requisicoesGlobais2.Classes
             bancoDados.Saida(comandoSelecao);
             this.AtualizarCampos();
         }
-        public void alterar_senha_usuario()
+
+        public void verificaLogin(string Cpf, string Senha)
         {
-            // Cria o objeto que controla o banco de dados
-            Classes.Cnn bancoDados = new Classes.Cnn();
 
-            string comandoDeInsercao = "UPDATE usuario " +
-                                       "SET senha_usuairo = '" + getSenha_usuario() + "'" +
-                                       " WHERE id_usuario = " + getId_login();
-
-            //Realiza o comando no banco de dados
-            bancoDados.Entrada(comandoDeInsercao);
         }
+
+
         public void proximo()
         {
-            // Cria o objeto que controla o banco de dados
-            Classes.Cnn bancoDados = new Classes.Cnn();
-
             bancoDados.carregarRegistro();
             this.AtualizarCampos();
         }
