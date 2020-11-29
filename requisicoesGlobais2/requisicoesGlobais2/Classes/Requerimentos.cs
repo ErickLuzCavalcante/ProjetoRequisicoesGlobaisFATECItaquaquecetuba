@@ -72,10 +72,53 @@ namespace requisicoesGlobais2.Classes
             //Realiza o comando no banco de dados
             bancoDados.Entrada(comandoDeInsercao);
         }
-        public void negar_requerimento()
-        {
+
+        public void buscarPorCPF()
+        { 
 
         }
 
+        public void buscarPorRA()
+        {
+        }
+        public void listarTodos()
+        {
+
+        }
+        public void listarPendentes()
+        {
+
+        } 
+        /*Metodos auxiliares de pesquisa*/
+
+        // Pula para o proximo registro
+        // Quando chegar a false, significa que chegou no ultimo registro
+        // Nao alterar 
+        private Classes.Cnn bancoDados = new Classes.Cnn();
+        public Boolean proximo()
+        {
+            if (bancoDados.carregarRegistro())
+            {
+                this.AtualizarCampos(); // Atualiza os campos confome o registro
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+        // Atualizar conforme a classe 
+        private void AtualizarCampos()
+        {
+            // Campos conforme o indice
+            this.id_requerimento = int.Parse(bancoDados.GetAtributo("id_requerimento"));
+            this.id_tp_requerimento= int.Parse(bancoDados.GetAtributo("id_tp_requerimento"));
+            this.trancamento_matricula= bancoDados.GetAtributo("trancamento_matricula");
+            this.justificativa_requerimento = bancoDados.GetAtributo("justificativa_requerimento");
+            this.id_aluno = int.Parse(bancoDados.GetAtributo("id_aluno")); ;
+
     }
+
+}
 }

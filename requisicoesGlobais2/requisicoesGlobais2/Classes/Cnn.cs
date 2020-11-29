@@ -41,7 +41,7 @@ namespace requisicoesGlobais2.Classes
                 Debug.WriteLine(ComandoSQL);
                 return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Debug.WriteLine("Falha ao executar o comando SQL");
                 Debug.WriteLine(ComandoSQL);
@@ -67,7 +67,7 @@ namespace requisicoesGlobais2.Classes
                 //conn.Close();
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Debug.WriteLine("Falha ao executar o comando SQL");
                 Debug.WriteLine(ComandoSQL);
@@ -81,7 +81,7 @@ namespace requisicoesGlobais2.Classes
             {
                 Debug.WriteLine("Buscando: " + Atributo);
                 return this.reader[Atributo].ToString();
-            }catch (Exception ex)
+            }catch (Exception)
             {
                 Debug.WriteLine("Falha ao buscar atributo");
                 return "";
