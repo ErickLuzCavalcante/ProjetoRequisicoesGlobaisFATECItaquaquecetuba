@@ -16,15 +16,23 @@ namespace requisicoesGlobais.Controllers
             if (Session["Usuario"] != null)
             {
 
-                var db = new DBRequerimento();
+				//var db = new DBRequerimento();
+				//var tipos = db.buscarTipos();
 
-                var tipos = db.buscarTipos();
+				
 
                 return View();
-            }
+            }else
 
-            return Redirect("Login");
+            return Redirect("Login/Login");
 
         }
+		[HttpPost]
+		public ActionResult Enviar(Requerimento requerimento)
+		{
+			requerimento.criar_requerimento();
+
+			return Redirect("Cadastrar/Cadastrar");
+		}
     }
 }
