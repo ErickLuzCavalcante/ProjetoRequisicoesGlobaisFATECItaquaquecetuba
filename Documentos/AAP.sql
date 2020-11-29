@@ -4,7 +4,7 @@ create database db_aap_sistemas_integrados;
 use db_aap_sistemas_integrados;
 -- 3º Cria as tabelas do banco
 create table tipo_requerimento (
-	id_tp_requerimento integer IDENTITY(1,1) PRIMARY KEY,
+	id_tp_requerimento integer PRIMARY KEY,
 	desc_tp_requerimento varchar(320) NOT NULL
 );
 
