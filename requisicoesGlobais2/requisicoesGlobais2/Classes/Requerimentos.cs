@@ -52,7 +52,7 @@ namespace requisicoesGlobais2.Classes
         {
             this.justificativa_requerimento = justificativa_requerimento;
         }
-        public void getId_aluno(int id_aluno)
+        public void setId_aluno(int id_aluno)
         {
             this.id_aluno = id_aluno;
         }
@@ -65,9 +65,9 @@ namespace requisicoesGlobais2.Classes
 
             // Comando que sera passado para o banco de dados
             string comandoDeInsercao = "INSERT INTO requerimento (id_tp_requerimento, trancamento_matricula, " +
-                "justificativa_requerimento)" +
-                " VALUES('" + this.id_tp_requerimento + this.trancamento_matricula +
-                            this.justificativa_requerimento+"')";
+                "justificativa_requerimento,id_aluno)" +
+                " VALUES(" + this.id_tp_requerimento + ",'"+ this.trancamento_matricula +
+                            "','"+this.justificativa_requerimento+"',"+this.id_aluno+")";
 
             //Realiza o comando no banco de dados
             bancoDados.Entrada(comandoDeInsercao);

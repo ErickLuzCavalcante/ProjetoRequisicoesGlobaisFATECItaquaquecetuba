@@ -39,12 +39,21 @@ namespace requisicoesGlobais2
 
 
             //alunos.cadastrar_aluno();
-
+            /*
             usuario.setCpf_usuario("41856915580");
             usuario.setSenha_usuario("123456789Senh");
             usuario.verificaLogin();
+            */
+            //Response.Write("<script>alert('" + usuario.verificaLogin() + "')</script>");
 
-            Response.Write("<script>alert('" + usuario.verificaLogin() + "')</script>");
+            Classes.Requerimentos requerimentos = new Classes.Requerimentos();
+
+            requerimentos.setId_tp_requerimetno(1);
+            requerimentos.setJustificativa_requerimento("Requerimento teste");
+            requerimentos.setTrancamento_matricula("Teste");
+            requerimentos.setId_aluno(1);
+            requerimentos.criar_requerimento();
+
 
 
         }
