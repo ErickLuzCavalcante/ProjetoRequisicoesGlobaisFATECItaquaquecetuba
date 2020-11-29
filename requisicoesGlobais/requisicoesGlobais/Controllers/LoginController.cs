@@ -26,13 +26,19 @@ namespace requisicoesGlobais.Controllers
 			//DBUsuario db = new DBUsuario();
 			//var usuarioRetorno = db.buscarUsuario(usuario);
 			//-------------------------------------------------
-			
+			Cnn cx = new Cnn();
+			Usuarios usuarios = new Usuarios();
+			Alunos alunos = new Alunos();
+			Requerimento requerimentos = new Requerimento();
+
+
+
+
 			try
 			{
 				if (usuario.verificaLogin() != false)
 				{
-						Session["Usuario"] = usuario;
-						return Redirect("Requerimento/Requerimento");
+					Response.Write("<script>alert('" + usuario.verificaLogin() + "')</script>");
 				}
 
 				//Session["Usuario"] = usuarioRetorno;
@@ -40,7 +46,7 @@ namespace requisicoesGlobais.Controllers
 
 				else
 				{
-					
+					Response.Write("Usuario e senha invalidos");
 					return View("Login");
 
 					//var teste = usuario;
@@ -48,6 +54,7 @@ namespace requisicoesGlobais.Controllers
 			}
 			catch (Exception ex)
 			{
+				Response.Write("Usuario e senha invalidos");
 				return View("Login");
 
 			}
