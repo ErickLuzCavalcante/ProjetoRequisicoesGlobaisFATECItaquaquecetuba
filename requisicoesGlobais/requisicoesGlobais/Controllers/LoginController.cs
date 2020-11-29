@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using requisicoesGlobais.Controllers;
-using requisicoesGlobais.Classes;
+
+using requisicoesGlobais.Models;
 
 namespace requisicoesGlobais.Controllers
 {
@@ -22,20 +23,42 @@ namespace requisicoesGlobais.Controllers
 		public ActionResult Login(Usuarios usuario)
 		{
 
-			DBUsuario db = new DBUsuario();
-			var usuarioRetorno = db.buscarUsuario(usuario);
+			//DBUsuario db = new DBUsuario();
+			//var usuarioRetorno = db.buscarUsuario(usuario);
+			//-------------------------------------------------
+			Cnn cx = new Cnn();
+			Usuarios usuarios = new Usuarios();
+			Alunos alunos = new Alunos();
+			Requerimento requerimentos = new Requerimento();
 
 
 
-			if (usuarioRetorno != null)
+
+			try
 			{
-				Session["Usuario"] = usuarioRetorno;
-				return Redirect("Requerimento/Requerimento");
+				if (usuario.verificaLogin() != false)
+				{
+					Response.Write("<script>alert('" + usuario.verificaLogin() + "')</script>");
+				}
+
+				//Session["Usuario"] = usuarioRetorno;
+				//return Redirect("Requerimento/Requerimento");
+
+				else
+				{
+					Response.Write("Usuario e senha invalidos");
+					return View("Login");
+
+					//var teste = usuario;
+				}
 			}
-			else
+			catch (Exception ex)
 			{
-				var teste = usuario;
+				Response.Write("Usuario e senha invalidos");
+				return View("Login");
+
 			}
+
 			return View();
 		}
 

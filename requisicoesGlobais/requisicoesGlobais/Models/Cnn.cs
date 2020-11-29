@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Diagnostics;
 
-namespace requisicoesGlobais.Classes
+namespace requisicoesGlobais.Models
 {
 	public class Cnn
 	{
@@ -17,7 +17,7 @@ namespace requisicoesGlobais.Classes
          */
 
 		// String de conexao, inidica como o sistema deve conectar ao banco de dados
-		private string stringConexao = "Data Source=localhost;Initial Catalog=db_aap_sistemas_integrados;Integrated Security=True";
+		private string stringConexao = "Data Source= DESKTOP-KANJINS\\SQLEXPRESS ;Initial Catalog=db_aap_sistemas_integrados;Integrated Security=True";
 
 
 		public SqlDataReader reader;

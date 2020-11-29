@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace requisicoesGlobais.Classes
+namespace requisicoesGlobais.Models
 {
 	public class Arquivos
 	{
@@ -18,7 +18,7 @@ namespace requisicoesGlobais.Classes
 		public void enviar_novo_arquivo()
 		{
 			// Cria o objeto que controla o banco de dados
-			Classes.Cnn bancoDados = new Classes.Cnn();
+			Models.Cnn bancoDados = new Models.Cnn();
 			// Comando que sera passado para o banco de dados
 			string comandoDeInsercao = "INSERT INTO arquivo (descricao_arquivo, arquivo, id_requerimento)" +
 				" VALUES ('" + this.descricao_arquivo + "','" + this.arquivo + "','" + id_requerimento + "')";

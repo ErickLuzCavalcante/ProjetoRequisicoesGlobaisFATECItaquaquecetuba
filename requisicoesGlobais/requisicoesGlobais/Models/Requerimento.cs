@@ -5,7 +5,7 @@ using System.Web;
 
 namespace requisicoesGlobais.Models
 {
-	public class Requerimentos
+	public class Requerimento
 	{
 		public int id_requerimento;
 		public int id_tp_requerimento;
@@ -61,7 +61,7 @@ namespace requisicoesGlobais.Models
 		public void criar_requerimento()
 		{
 			// Cria o objeto que controla o banco de dados
-			Classes.Cnn bancoDados = new Classes.Cnn();
+			Models.Cnn bancoDados = new Models.Cnn();
 
 			// Comando que sera passado para o banco de dados
 			string comandoDeInsercao = "INSERT INTO requerimento (id_tp_requerimento, trancamento_matricula, " +

@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace requisicoesGlobais.Classes
+namespace requisicoesGlobais.Models
 {
-	public class Usuarios
+	public class Usuarios : Alunos
 	{
 
 		//declaração de variáveis com gets e sets
-		private int id_login;
-		public string nome_usuario;
-		public string email_usuario;
-		public string cpf_usuario;
-		public string telefone_usuario;
-		public string senha_usuario;
-		public String data_criacao_usuario;
-		public String data_atualizacao_usuario;
-		public int status_usuario;
 
+		public int id_login { get; set; }
+		public int status_usuario { get; set; }
+		public string nome_usuario { get; set; }
+		public string email_usuario { get; set; }
+		public string cpf_usuario { get; set; }
+		public string telefone_usuario { get; set; }
+		public string senha_usuario { get; set; }
+		public string data_criacao_usuario { get; set; }
+		public string data_atualizacao_usuario { get; set; }
 		// Métodos GETs
 
 		public int getId_login()
@@ -104,13 +104,13 @@ namespace requisicoesGlobais.Classes
 		public void cadastrar_usuario()
 		{
 			// Cria o objeto que controla o banco de dados
-			Classes.Cnn bancoDados = new Classes.Cnn();
+			Models.Cnn bancoDados = new Models.Cnn();
 
 			// Comando que sera passado para o banco de dados
 			string comandoDeInsercao = "INSERT INTO usuario (nome_usuario, email_usuario, cpf_usuario, telefone_usuario, " +
 				"senha_usuario, data_criacao_usuario, data_atualizacao_usuario, status_usuario)" +
-				" VALUES('" + this.nome_usuario + "','" + this.email_usuario + "','" + this.cpf_usuario + "','" + this.telefone_usuario + "','" + this.senha_usuario + "','" +
-				this.data_criacao_usuario + "','" + this.data_atualizacao_usuario + "'," + this.status_usuario + ")";
+				" VALUES('" + nome_usuario + "','" + email_usuario + "','" + cpf_usuario + "','" + telefone_usuario + "','" + senha_usuario + "','" +
+				 DateTime.Now + "','" + DateTime.Now + "'," + status_usuario + ")";
 
 			//Realiza o comando no banco de dados
 			bancoDados.Entrada(comandoDeInsercao);
@@ -118,13 +118,13 @@ namespace requisicoesGlobais.Classes
 		public void inativar_usuario()
 		{
 			// Cria o objeto que controla o banco de dados
-			Classes.Cnn bancoDados = new Classes.Cnn();
+			Models.Cnn bancoDados = new Models.Cnn();
 
 			string comandoDeInsercao = "UPDATE usuario " +
 									   "SET status_usuario = '" + getStatus_usuario() + "'" +
 									   " WHERE id_usuario = " + getId_login() + " AND status_usuario = 0";
 		}
-		private Classes.Cnn bancoDados = new Classes.Cnn();
+		private Models.Cnn bancoDados = new Models.Cnn();
 		public void consultar_usuario()
 		{
 			// Cria o objeto que controla o banco de dados

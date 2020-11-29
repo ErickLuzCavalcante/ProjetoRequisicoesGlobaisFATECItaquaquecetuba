@@ -44,7 +44,7 @@ namespace requisicoesGlobais.Models
 		public void cadastrar_curso()
 		{
 			// Cria o objeto que controla o banco de dados
-			Classes.Cnn bancoDados = new Classes.Cnn();
+			Models.Cnn bancoDados = new Models.Cnn();
 
 			// Comando que sera passado para o banco de dados
 			string comandoDeInsercao = "INSERT INTO curso (nome_curso) VALUES('" + this.Nome_curso + "')";
@@ -57,7 +57,7 @@ namespace requisicoesGlobais.Models
 		public void alterar_curso()
 		{
 			// Cria o objeto que controla o banco de dados
-			Classes.Cnn bancoDados = new Classes.Cnn();
+			Models.Cnn bancoDados = new Models.Cnn();
 
 			// Comando que sera passado para o banco de dados
 			/* -> O que o Comando SQL faz?
@@ -74,7 +74,7 @@ namespace requisicoesGlobais.Models
 			bancoDados.Entrada(comandoDeInsercao);
 		}
 
-		private Classes.Cnn bancoDados = new Classes.Cnn();
+		private Models.Cnn bancoDados = new Models.Cnn();
 		public void listar_todos_curso()
 		{
 			// Cria o objeto que controla o banco de dados

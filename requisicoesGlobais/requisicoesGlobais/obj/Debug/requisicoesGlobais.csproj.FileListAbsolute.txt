@@ -96,7 +96,6 @@ C:\GIT\ProjetoRequisicoesGlobaisFATECItaquaquecetuba\requisicoesGlobais\requisic
 C:\GIT\ProjetoRequisicoesGlobaisFATECItaquaquecetuba\requisicoesGlobais\requisicoesGlobais\bin\EntityFramework.SqlServer.dll
 C:\GIT\ProjetoRequisicoesGlobaisFATECItaquaquecetuba\requisicoesGlobais\requisicoesGlobais\bin\EntityFramework.xml
 C:\GIT\ProjetoRequisicoesGlobaisFATECItaquaquecetuba\requisicoesGlobais\requisicoesGlobais\bin\EntityFramework.SqlServer.xml
-C:\GIT\ProjetoRequisicoesGlobaisFATECItaquaquecetuba\requisicoesGlobais\requisicoesGlobais\obj\Debug\requisicoesGlobais.csprojAssemblyReference.cache
 C:\Users\Yuga\Documents\Faculdade\requisicoes-globais-aap\requisicoesGlobais\requisicoesGlobais\bin\requisicoesGlobais.dll.config
 C:\Users\Yuga\Documents\Faculdade\requisicoes-globais-aap\requisicoesGlobais\requisicoesGlobais\bin\requisicoesGlobais.dll
 C:\Users\Yuga\Documents\Faculdade\requisicoes-globais-aap\requisicoesGlobais\requisicoesGlobais\bin\requisicoesGlobais.pdb
@@ -196,3 +195,4 @@ C:\Users\Yuga\Documents\Faculdade\requisicoes-globais-aap\requisicoesGlobais\req
 C:\Users\Yuga\Documents\Faculdade\requisicoes-globais-aap\requisicoesGlobais\requisicoesGlobais\obj\Debug\requisicoesGlobais.csproj.CopyComplete
 C:\Users\Yuga\Documents\Faculdade\requisicoes-globais-aap\requisicoesGlobais\requisicoesGlobais\obj\Debug\requisicoesGlobais.dll
 C:\Users\Yuga\Documents\Faculdade\requisicoes-globais-aap\requisicoesGlobais\requisicoesGlobais\obj\Debug\requisicoesGlobais.pdb
+C:\GIT\ProjetoRequisicoesGlobaisFATECItaquaquecetuba\requisicoesGlobais\requisicoesGlobais\obj\Debug\requisicoesGlobais.csprojAssemblyReference.cache

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using requisicoesGlobais.Classes;
+using requisicoesGlobais.Models;
 
 namespace requisicoesGlobais.Controllers
 {
@@ -20,14 +20,13 @@ namespace requisicoesGlobais.Controllers
 		{
 			try
 			{
-				//instancia a classe do banco de dados 
-				DBUsuario banco = new DBUsuario();
-				//executando  a função cadastro  
+			
+				
+				usuarios.cadastrar_usuario();
+				usuarios.cadastrar_aluno();
 
-				usuarios.data_criacao_usuario = DateTime.Now;
-				usuarios.data_atualizacao_usuario = DateTime.Now;
 
-				banco.cadastro(usuarios);
+				//banco.cadastro(usuarios);
 				return View("../Login/Login");
 			}
 			catch (Exception ex)

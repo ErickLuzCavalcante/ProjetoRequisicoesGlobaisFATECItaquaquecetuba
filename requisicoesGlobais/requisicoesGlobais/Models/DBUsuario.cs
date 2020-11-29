@@ -5,7 +5,7 @@ using System.Web;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace requisicoesGlobais.Classes
+namespace requisicoesGlobais.Models
 {
 	public class DBUsuario
 	{
@@ -33,8 +33,8 @@ namespace requisicoesGlobais.Classes
 
 				SqlCommand comando = new SqlCommand(command, conn);
 
-				//comando.Parameters.Add(new SqlParameter("id_usuario", usuarios.nome_usuario));
-				comando.Parameters.Add(new SqlParameter("nome_usuario", usuarios.nome_usuario));
+			//comando.Parameters.Add(new SqlParameter("id_usuario", usuarios.nome_usuario));
+			comando.Parameters.Add(new SqlParameter("nome_usuario", usuarios.nome_usuario));
 			comando.Parameters.Add(new SqlParameter("email_usuario", usuarios.email_usuario));
 			comando.Parameters.Add(new SqlParameter("cpf_usuario", usuarios.cpf_usuario));
 			comando.Parameters.Add(new SqlParameter("senha_usuario", usuarios.senha_usuario));
@@ -98,8 +98,8 @@ namespace requisicoesGlobais.Classes
 								email_usuario = email_usuario,
 								cpf_usuario = cpf_usuario,
 								telefone_usuario = telefone_usuario,
-								data_criacao_usuario =  data_atualizacao_usuario,
-								data_atualizacao_usuario = data_atualizacao_usuario,
+							//	data_criacao_usuario =  data_atualizacao_usuario,
+								//data_atualizacao_usuario = data_atualizacao_usuario,
 								status_usuario = status_usuario
 							};
 
