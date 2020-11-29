@@ -138,6 +138,7 @@
     <Compile Include="Models\Alunos.cs" />
     <Compile Include="Models\Arquivos.cs" />
     <Compile Include="Models\Cnn.cs" />
+    <Compile Include="Models\Curso.cs" />
     <Compile Include="Models\DBRequerimento.cs" />
     <Compile Include="Models\DBUsuario.cs" />
     <Compile Include="Models\Requerimento.cs" />

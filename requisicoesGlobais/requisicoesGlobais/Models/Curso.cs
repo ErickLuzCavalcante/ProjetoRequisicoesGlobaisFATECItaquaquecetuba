@@ -1,106 +1,81 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace requisicoesGlobais.Classes
+namespace requisicoesGlobais.Models
 {
-	public class Alunos
+	public class Cursos
 	{
-		// Atributos com get e set
-		private int id_aluno;
-		private String ra_aluno;
-		private String turno_aluno;
-		private int id_curso;
-		private int id_usuario;
+		/*
+         * Classe de Controle de Cursos
+         * Classse voltada para inserir, alterar, excluir e pesquisar um curso  no banco de dados
+        */
 
+		// Atributos
+		private int id_curso { get; set; }
+		private String Nome_curso;
 
-		//GETs 
+		// GETs
 
-		public int get_id_aluno()
+		public String getNome_curso()
 		{
-			return this.id_aluno;
+			return this.Nome_curso;
 		}
 
-		public String get_ra_aluno()
-		{
-			return this.ra_aluno;
-		}
-		public String get_turno_aluno()
-		{
-			return this.turno_aluno;
-		}
-		public int get_id_curso()
+		public int getId_curso()
 		{
 			return this.id_curso;
 		}
-		public int get_id_usuario()
+
+
+		// SETs
+		public void setNome_curso(String Nome_curso)
 		{
-			return this.id_usuario;
+			this.Nome_curso = Nome_curso;
 		}
 
-		//SETs 
-		public void set_id_aluno(int id_aluno)
-		{
-			this.id_aluno = id_aluno;
-		}
-
-		public void set_ra_aluno(String ra_aluno)
-		{
-			this.ra_aluno = ra_aluno;
-		}
-
-		public void set_turno_aluno(String turno_aluno)
-		{
-			this.turno_aluno = turno_aluno;
-		}
-
-		public void set_id_curso(int id_curso)
+		public void setId_curso(int id_curso)
 		{
 			this.id_curso = id_curso;
 		}
 
-		public void set_id_usuario(int id_usuario)
-		{
-			this.id_usuario = id_usuario;
-		}
-
-
 		// Metodos
-		public void cadastrar_aluno()
+		public void cadastrar_curso()
 		{
 			// Cria o objeto que controla o banco de dados
 			Classes.Cnn bancoDados = new Classes.Cnn();
 
 			// Comando que sera passado para o banco de dados
-			string comandoDeInsercao = "INSERT INTO aluno (ra_aluno, turno_aluno, id_curso, id_usuario) VALUES" +
-														 "('" + ra_aluno + "', '" + turno_aluno + "', " + id_curso + ", " + id_usuario + ")";
+			string comandoDeInsercao = "INSERT INTO curso (nome_curso) VALUES('" + this.Nome_curso + "')";
 
 			//Realiza o comando no banco de dados
 			bancoDados.Entrada(comandoDeInsercao);
 
 		}
 
-		public void alterar_aluno()
+		public void alterar_curso()
 		{
 			// Cria o objeto que controla o banco de dados
 			Classes.Cnn bancoDados = new Classes.Cnn();
 
 			// Comando que sera passado para o banco de dados
-			string comandoDeInsercao = "UPDATE aluno " +
-				"SET turno_aluno = '" + turno_aluno + "'," +
-							   "id_curso = " + id_curso + "," +
-							   "id_usuario = " + id_usuario +
-							   "WHERE ra_aluno =" + ra_aluno;
+			/* -> O que o Comando SQL faz?
+             * O comando irá usar o valor do getId_curso para selecionar 
+             * a linha e alterar o Nome_curso 
+             * pelo valor inserido no getNome_curso() 
+             */
+
+			string comandoDeInsercao = "UPDATE curso " +
+									   "SET nome_curso = '" + getNome_curso() + "'" +
+									   " WHERE id_curso = " + getId_curso();
 
 			//Realiza o comando no banco de dados
 			bancoDados.Entrada(comandoDeInsercao);
-
 		}
 
 		private Classes.Cnn bancoDados = new Classes.Cnn();
-		public void listar_por_idUsuario()
+		public void listar_todos_curso()
 		{
 			// Cria o objeto que controla o banco de dados
 
@@ -113,10 +88,8 @@ namespace requisicoesGlobais.Classes
              */
 
 			string comandoSelecao = "SELECT " +
-				"*" +
-				" FROM aluno where " +
-				"id_usuario = " + id_usuario;
-			;
+									   "id_curso,nome_curso " +
+									   "FROM curso";
 
 			//Realiza o comando no banco de dados
 			if (bancoDados.Saida(comandoSelecao))
@@ -147,12 +120,8 @@ namespace requisicoesGlobais.Classes
 		private void AtualizarCampos()
 		{
 			// Campos conforme o indice
-			id_aluno = int.Parse(bancoDados.GetAtributo("id_aluno"));
-			ra_aluno = bancoDados.GetAtributo("ra_aluno");
-			turno_aluno = bancoDados.GetAtributo("turno_aluno");
+			Nome_curso = bancoDados.GetAtributo("Nome_curso");
 			id_curso = int.Parse(bancoDados.GetAtributo("id_curso"));
-			id_usuario = int.Parse(bancoDados.GetAtributo("id_usuario"));
 		}
 	}
-
 }
