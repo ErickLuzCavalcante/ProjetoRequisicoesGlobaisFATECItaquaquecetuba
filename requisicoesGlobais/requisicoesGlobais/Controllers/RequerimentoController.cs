@@ -1,4 +1,5 @@
 ﻿using requisicoesGlobais.Models;
+using System;
 using System.Net;
 using System.Net.Mail;
 using System.Web;
@@ -35,6 +36,7 @@ namespace requisicoesGlobais.Controllers
             usuarios.listar_por_idUsuario();
             requerimento.id_aluno = usuarios.id_aluno;
             requerimento.criar_requerimento();
+            SendMail("erickl.cavalcante@gmail.com");
             return Redirect("Cadastrar/Cadastrar");
         }
 
@@ -45,7 +47,7 @@ namespace requisicoesGlobais.Controllers
                 // Estancia da Classe de Mensagem
                 MailMessage _mailMessage = new MailMessage();
                 // Remetente
-                _mailMessage.From = new MailAddress("samuelsales81@gmail.com");
+                _mailMessage.From = new MailAddress("envaido para"); // ocultado por privacidade
 
                 // Destinatario seta no metodo abaixo
 
@@ -56,14 +58,14 @@ namespace requisicoesGlobais.Controllers
                 _mailMessage.Body = "<b>OlÃ¡ Tudo bem ??</b><p>Teste ParÃ¡grafo</p>";
 
                 //CONFIGURAÃ‡ÃƒO COM PORTA
-                SmtpClient _smtpClient = new SmtpClient("smtp.gmail.com", Convert.ToInt32("587"));
+                SmtpClient _smtpClient = new SmtpClient("smtp.gmail.com", int.Parse("587"));
 
                 //CONFIGURAÃ‡ÃƒO SEM PORTA
                 // SmtpClient _smtpClient = new SmtpClient(UtilRsource.ConfigSmtp);
 
                 // Credencial para envio por SMTP Seguro (Quando o servidor exige autenticaÃ§Ã£o)
                 _smtpClient.UseDefaultCredentials = false;
-                _smtpClient.Credentials = new NetworkCredential("EMAIL DO REMETENTE", "SUA SENHA AQUI");
+                _smtpClient.Credentials = new NetworkCredential("emailderecebimento", "senha"); // ocultado por privacidade
 
                 _smtpClient.EnableSsl = true;
 
