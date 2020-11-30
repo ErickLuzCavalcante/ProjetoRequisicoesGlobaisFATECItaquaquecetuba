@@ -23,6 +23,8 @@ namespace requisicoesGlobais.Controllers
 			
 				
 				usuarios.cadastrar_usuario();
+				usuarios.consultar_usuario();
+				usuarios.id_usuario = usuarios.id_login;
 				usuarios.cadastrar_aluno();
 
 

@@ -136,7 +136,7 @@ namespace requisicoesGlobais.Models
              * pelo valor inserido no getNome_curso() 
              */
 
-			string comandoSelecao = "SELECT id_usuario,nome_usuario,email_usuario,cpf_usuario,telefone_usuario,senha_usuario,data_criacao_usuario,data_atualizacao_usuario,status_usuario FROM usuario where id_usuario = " + getId_login();
+			string comandoSelecao = "SELECT id_usuario,nome_usuario,email_usuario,cpf_usuario,telefone_usuario,senha_usuario,data_criacao_usuario,data_atualizacao_usuario,status_usuario FROM usuario where cpf_usuario = convert(varchar," + cpf_usuario+")";
 
 			//Realiza o comando no banco de dados
 			if (bancoDados.Saida(comandoSelecao))
