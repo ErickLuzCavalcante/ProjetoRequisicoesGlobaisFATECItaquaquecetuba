@@ -31,7 +31,7 @@ namespace requisicoesGlobais.Controllers
 			{
 				if (usuario.verificaLogin() != false)
 				{
-						Session["Usuario"] = usuario;
+						Session["Usuario"] = usuario.cpf_usuario;
 						return Redirect("Requerimento/Requerimento");
 				}
 
