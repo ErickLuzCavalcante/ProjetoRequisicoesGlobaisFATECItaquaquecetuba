@@ -24,7 +24,7 @@ create table arquivo(
 );
 
 create table curso(
-	id_curso integer IDENTITY(1,1) PRIMARY KEY,
+	id_curso integer PRIMARY KEY,
 	nome_curso varchar(80) NOT NULL
 );
 

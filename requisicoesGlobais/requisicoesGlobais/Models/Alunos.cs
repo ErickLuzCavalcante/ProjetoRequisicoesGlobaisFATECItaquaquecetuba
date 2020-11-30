@@ -25,7 +25,7 @@ namespace requisicoesGlobais.Models
 
 			// Comando que sera passado para o banco de dados
 			string comandoDeInsercao = "INSERT INTO aluno (ra_aluno, turno_aluno, id_curso, id_usuario) VALUES" +
-														 "('" + ra_aluno + "', '" + turno_aluno + "', '" + id_curso + "', '" + id_usuario + ")";
+														 "('" + ra_aluno + "', '" + turno_aluno + "', " + id_curso + ", " + id_usuario + ")";
 
 			//Realiza o comando no banco de dados
 			bancoDados.Entrada(comandoDeInsercao);
