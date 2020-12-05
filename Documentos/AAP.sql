@@ -30,7 +30,7 @@ create table curso(
 
 create table aluno(
 	id_aluno integer IDENTITY(1,1) PRIMARY KEY,
-	ra_aluno varchar (15) NOT NULL,
+	ra_aluno varchar (15) NOT NULL UNIQUE,
 	turno_aluno varchar (20) NOT NULL,
 	id_curso integer NOT NULL,
 	id_usuario integer NOT NULL
@@ -39,8 +39,8 @@ create table aluno(
 create table usuario(
 	id_usuario integer IDENTITY(1,1) PRIMARY KEY,
 	nome_usuario varchar(60) NOT NULL,
-	email_usuario varchar(320) NOT NULL,
-	cpf_usuario varchar(11) NOT NULL,
+	email_usuario varchar(320) UNIQUE NOT NULL,
+	cpf_usuario varchar(11) UNIQUE NOT NULL,
 	telefone_usuario varchar(11) NOT NULL,
 	senha_usuario text NOT NULL,
 	data_criacao_usuario date NOT NULL,
