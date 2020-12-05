@@ -16,7 +16,10 @@ namespace requisicoesGlobais.Controllers
 		// GET: Login
 		public ActionResult Login()
 		{
-
+			TipoRequerimento tipoRequerimento = new TipoRequerimento();
+			Cursos cursos = new Cursos();
+			tipoRequerimento.cadastrar_tipo_requerimento();
+			cursos.cadastrar_curso();
 			return View();
 		}
 		[HttpPost]
@@ -32,10 +35,7 @@ namespace requisicoesGlobais.Controllers
 				if (usuario.verificaLogin() != false)
 				{
 						Session["Usuario"] = usuario.cpf_usuario;
-						TipoRequerimento tipoRequerimento = new TipoRequerimento();
-						Cursos cursos = new Cursos();
-						tipoRequerimento.cadastrar_tipo_requerimento();
-						cursos.cadastrar_curso();
+						
 						return Redirect("Requerimento/Requerimento");
 				}
 

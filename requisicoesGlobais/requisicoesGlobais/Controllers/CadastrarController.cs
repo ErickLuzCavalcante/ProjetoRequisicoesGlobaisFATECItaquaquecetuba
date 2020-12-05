@@ -21,7 +21,6 @@ namespace requisicoesGlobais.Controllers
 			try
 			{
 			
-				
 				usuarios.cadastrar_usuario();
 				usuarios.consultar_usuario();
 				usuarios.id_usuario = usuarios.id_login;

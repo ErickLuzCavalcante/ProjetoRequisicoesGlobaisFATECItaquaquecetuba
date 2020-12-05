@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace requisicoesGlobais.Models
 {
@@ -13,12 +14,25 @@ namespace requisicoesGlobais.Models
 
 		//declaração de variáveis com gets e sets
 
+		[Key]
 		public int id_login { get; set; }
 		public int status_usuario { get; set; }
+
+		[Required (ErrorMessage ="*")]
 		public string nome_usuario { get; set; }
+
 		public string email_usuario { get; set; }
+
+		[Required(ErrorMessage = "*")]
+		[StringLength (11, MinimumLength = 11, ErrorMessage ="CPF Invalido")]
 		public string cpf_usuario { get; set; }
+
+		[Required(ErrorMessage = "*")]
+		[StringLength(11, MinimumLength = 11, ErrorMessage = "Telefone Invalido")]
 		public string telefone_usuario { get; set; }
+
+		[Required(ErrorMessage = "*")]
+		[StringLength(15, MinimumLength = 6, ErrorMessage = "Senha Fraca")]
 		public string senha_usuario { get; set; }
 		public string data_criacao_usuario { get; set; }
 		public string data_atualizacao_usuario { get; set; }
