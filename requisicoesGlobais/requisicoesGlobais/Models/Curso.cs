@@ -7,51 +7,36 @@ namespace requisicoesGlobais.Models
 {
 	public class Cursos
 	{
+		// Atributos
+		public int id_curso { get; set; }
+		public string Nome_curso { get; set; }
+
 		/*
          * Classe de Controle de Cursos
          * Classse voltada para inserir, alterar, excluir e pesquisar um curso  no banco de dados
         */
 
-		// Atributos
-		private int id_curso { get; set; }
-		private String Nome_curso;
-
-		// GETs
-
-		public String getNome_curso()
-		{
-			return this.Nome_curso;
-		}
-
-		public int getId_curso()
-		{
-			return this.id_curso;
-		}
-
-
-		// SETs
-		public void setNome_curso(String Nome_curso)
-		{
-			this.Nome_curso = Nome_curso;
-		}
-
-		public void setId_curso(int id_curso)
-		{
-			this.id_curso = id_curso;
-		}
-
 		// Metodos
 		public void cadastrar_curso()
 		{
-			// Cria o objeto que controla o banco de dados
-			Models.Cnn bancoDados = new Models.Cnn();
+			string[] nome_curso = { "GTI", "GCOM", "SEC" };
+			for (int i = 0; i < 3; i++)
+			{
+				id_curso = i;
+				Nome_curso = nome_curso[i];
 
-			// Comando que sera passado para o banco de dados
-			string comandoDeInsercao = "INSERT INTO curso (nome_curso) VALUES('" + this.Nome_curso + "')";
 
-			//Realiza o comando no banco de dados
-			bancoDados.Entrada(comandoDeInsercao);
+				// Cria o objeto que controla o banco de dados
+				Cnn bancoDados = new Cnn();
 
+				// Comando que sera passado para o banco de dados
+				string comandoDeInsercao = "INSERT INTO curso (id_curso, nome_curso) " +
+					" VALUES(" + id_curso + ",'" + Nome_curso + "')";
+
+				//Realiza o comando no banco de dados
+				bancoDados.Entrada(comandoDeInsercao);
+
+			}
 		}
 
 		public void alterar_curso()
@@ -67,8 +52,8 @@ namespace requisicoesGlobais.Models
              */
 
 			string comandoDeInsercao = "UPDATE curso " +
-									   "SET nome_curso = '" + getNome_curso() + "'" +
-									   " WHERE id_curso = " + getId_curso();
+									   "SET nome_curso = '" + id_curso + "'" +
+									   " WHERE id_curso = " + Nome_curso;
 
 			//Realiza o comando no banco de dados
 			bancoDados.Entrada(comandoDeInsercao);
