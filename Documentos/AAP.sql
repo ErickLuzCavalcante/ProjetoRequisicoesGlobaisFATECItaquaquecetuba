@@ -41,7 +41,7 @@ create table usuario(
 	nome_usuario varchar(60) NOT NULL,
 	email_usuario varchar(320) UNIQUE NOT NULL,
 	cpf_usuario varchar(11) UNIQUE NOT NULL,
-	telefone_usuario varchar(11) NOT NULL,
+	telefone_usuario text NOT NULL,
 	senha_usuario text NOT NULL,
 	data_criacao_usuario date NOT NULL,
 	data_atualizacao_usuario date,
