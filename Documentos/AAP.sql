@@ -33,7 +33,7 @@ create table aluno(
 	ra_aluno varchar (15) NOT NULL UNIQUE,
 	turno_aluno varchar (20) NOT NULL,
 	id_curso integer NOT NULL,
-	id_usuario integer NOT NULL
+	id_usuario integer UNIQUE NOT NULL
 );
 
 create table usuario(
