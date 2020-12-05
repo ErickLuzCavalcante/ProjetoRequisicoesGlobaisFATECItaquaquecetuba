@@ -31,7 +31,7 @@ namespace requisicoesGlobais.Models
 			//Realiza o comando no banco de dados
 			bancoDados.Entrada(comandoDeInsercao);
 		}
-		public void negar_requerimento()
+		public void ultimorequerimento()
 		{
 
 		}
