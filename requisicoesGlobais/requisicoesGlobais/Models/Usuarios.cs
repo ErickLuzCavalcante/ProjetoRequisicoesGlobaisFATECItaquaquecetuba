@@ -25,15 +25,15 @@ namespace requisicoesGlobais.Models
 		public string email_usuario { get; set; }
 
 		[Required(ErrorMessage = "* CPF invalido ")]
-		//[StringLength (11, MinimumLength = 11, ErrorMessage ="CPF Invalido")]
+		[StringLength (11, MinimumLength = 10)]
 		public string cpf_usuario { get; set; }
 
 		[Required(ErrorMessage = "* Telefone Invalido ")]
-		//[StringLength(11, MinimumLength = 11, ErrorMessage = "Telefone Invalido")]
+		[StringLength(11, MinimumLength = 8 )]
 		public string telefone_usuario { get; set; }
 
 		[Required(ErrorMessage = "* Senha invalida")]
-		//[StringLength(15, MinimumLength = 6, ErrorMessage = "Senha Fraca")]
+		[StringLength(20, MinimumLength = 6, ErrorMessage = "Senha Fraca")]
 		public string senha_usuario { get; set; }
 
 
