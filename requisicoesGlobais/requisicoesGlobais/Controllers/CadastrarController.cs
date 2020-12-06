@@ -18,24 +18,32 @@ namespace requisicoesGlobais.Controllers
 		[HttpPost]
 		public ActionResult Cadastrar(Usuarios usuarios)
 		{
-			try
+			if (ModelState.IsValid)
 			{
+				try
+				{
+
+					usuarios.cadastrar_usuario();
+					usuarios.consultar_usuario();
+					usuarios.id_usuario = usuarios.id_login;
+					usuarios.cadastrar_aluno();
+
+
+					//banco.cadastro(usuarios);
+					return View("../Login/Login");
+				}
+				catch (Exception ex)
+				{
+					string mensagem = "Erro " + ex;
+
+					return View("Cadastrar");
+				}
+			}
+			else
+			{
+				return View();
+			}
 			
-				usuarios.cadastrar_usuario();
-				usuarios.consultar_usuario();
-				usuarios.id_usuario = usuarios.id_login;
-				usuarios.cadastrar_aluno();
-
-
-				//banco.cadastro(usuarios);
-				return View("../Login/Login");
-			}
-			catch (Exception ex)
-			{
-				string mensagem = "Erro " + ex;
-
-				return View("Cadastrar");
-			}
 		}
 	}
 }

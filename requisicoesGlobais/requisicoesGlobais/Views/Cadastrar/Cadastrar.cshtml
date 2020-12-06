@@ -37,7 +37,8 @@
 							</div>
 							<div class="campo email">
 								<label for="email">Email</label>
-								@Html.EditorFor(e => e.email_usuario)
+								@Html.TextBoxFor(e => e.email_usuario)
+								@Html.ValidationMessageFor(model => model.email_usuario)
 							</div>
 						</div>
 
@@ -45,10 +46,14 @@
 							<div class="campo nome">
 								<label for="cpfCad">CPF</label>
 								@Html.TextBoxFor(c => c.cpf_usuario)
+								@Html.ValidationMessageFor(model => model.cpf_usuario)
+
 							</div>
 							<div class="campo ra">
 								<label for="ra">RA</label>
 								@Html.TextBoxFor(r => r.ra_aluno)
+								@Html.ValidationMessageFor(model => model.ra_aluno)
+
 							</div>
 						</div>
 
@@ -56,6 +61,8 @@
 							<div class="campo telefone">
 								<label for="telefone">Telefone</label>
 								@Html.TextBoxFor(t => t.telefone_usuario)
+								@Html.ValidationMessageFor(model => model.telefone_usuario)
+
 							</div>
 							<div class="campo">
 								<div class="c-select">A</div>
@@ -75,10 +82,14 @@
 							<div class="campo senha">
 								<label for="senhaCad">Senha</label>
 								@Html.PasswordFor(s => s.senha_usuario)
+								@Html.ValidationMessageFor(model => model.senha_usuario)
+
 							</div>
 							<div class="campo senha">
 								<label for="confirmeSenha">Confirme a senha</label>
 								@Html.PasswordFor(s => s.senha_usuario)
+								@Html.ValidationMessageFor(model => model.senha_usuario)
+
 							</div>
 						</div>
 
@@ -89,9 +100,9 @@
 								@Html.DropDownListFor(model => model.id_curso, new List<SelectListItem>
 								   {
 									   new SelectListItem{Text = "Selecione", Value = ""},
-									   new SelectListItem{Text = "Gestão da Tecnologia da Informação", Value = "Gestão da Tecnologia da Informação"},
-									   new SelectListItem{Text = "Gestão Comercial", Value = "Gestão Comercial"},
-									   new SelectListItem{Text = "Secretariado", Value = "Secretariado"}
+									   new SelectListItem{Text = "Gestão da Tecnologia da Informação", Value = "0"},
+									   new SelectListItem{Text = "Gestão Comercial", Value = "1"},
+									   new SelectListItem{Text = "Secretariado", Value = "2"}
 								   })
 							</div>
 						</div>
