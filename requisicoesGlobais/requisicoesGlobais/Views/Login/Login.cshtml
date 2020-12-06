@@ -28,11 +28,15 @@
 							<label for="cpf">CPF</label>
 							<!--<input type="text" name="cpf" id="cpf" />-->
 							@Html.TextBoxFor(c => c.cpf_usuario)
+							@Html.ValidationMessageFor(model => model.cpf_usuario)
+
 						</div>
 						<div class="campo senha">
 							<label for="senha">Senha</label>
 							<!--<input type="password" name="senha" id="senha" />-->
 							@Html.PasswordFor(s => s.senha_usuario)
+							@Html.ValidationMessageFor(model => model.senha_usuario)
+
 						</div>
 					</div>
 
