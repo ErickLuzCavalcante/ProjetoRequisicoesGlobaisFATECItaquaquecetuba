@@ -45,6 +45,8 @@
 										   new SelectListItem{Text = "4 ) Desistencia da matricula em disciplina", Value = "4"}
 
 					})
+						@Html.ValidationMessageFor(model => model.id_tp_requerimento)
+
 					</div>
 					<br />
 					<div class="switch-trancamento">
@@ -56,7 +58,7 @@
 					</div>
 					<div class="campo" id="campoTrancamento">
 						<div class="c-select">&#x2039;</div>
-						@Html.DropDownListFor(tr => tr.id_tp_requerimento, new List<SelectListItem>
+						@Html.DropDownListFor(tr => tr.trancamento_matricula, new List<SelectListItem>
 				 {
 					  new SelectListItem{Text = "Selecione", Value = ""},
 									   new SelectListItem{Text = " Falta de base teórica para acompanhar o curso", Value = "1"},
@@ -73,6 +75,7 @@
 									   new SelectListItem{Text = " Problemas de saúde pessoal e/ou familiar não amparadas pela Regulamentação de Graduação", Value = "12"}
 
 				})
+					
 
 					</div>
 					<div class="campo">
@@ -81,6 +84,8 @@
 						</label>
 						<!--<textarea name="txtJustificar" id="txtJustificar"></textarea>-->
 						@Html.TextAreaFor(ta => ta.justificativa_requerimento)
+						@Html.ValidationMessageFor(model => model.justificativa_requerimento)
+
 					</div>
 					<div class="campo">
 						<label for="anexo">Anexo</label>
