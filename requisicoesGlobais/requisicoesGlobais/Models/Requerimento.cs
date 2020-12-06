@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Linq;
 using System.Web;
 
@@ -17,7 +18,10 @@ namespace requisicoesGlobais.Models
         public string trancamento_matricula { get; set; }
         public string arquivo_requerimento { get; set; }
 
-        private Models.Cnn bancoDados = new Models.Cnn();
+		public IEnumerable<HttpPostedFileBase> Arquivos { get; set; }
+
+
+		private Models.Cnn bancoDados = new Models.Cnn();
 
 
         //Métodos da classe
@@ -80,6 +84,7 @@ namespace requisicoesGlobais.Models
 
             }
         }
+	
 
     }
 }

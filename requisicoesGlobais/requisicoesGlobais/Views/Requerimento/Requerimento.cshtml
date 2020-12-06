@@ -16,7 +16,7 @@
 	<title>Requisição Global - Formulário</title>
 </head>
 <body>
-	@using (Html.BeginForm("Enviar", "Requerimento", FormMethod.Post))
+	@using (Html.BeginForm("Enviar", "Requerimento", FormMethod.Post, new { enctype = "multipart/form-data" }))
 	{
 		<form class="container">
 			<header>
@@ -89,8 +89,9 @@
 					</div>
 					<div class="campo">
 						<label for="anexo">Anexo</label>
-						<!--<input type="file" name="anexo" id="anexo" />-->
-						@Html.TextBoxFor(f => f.arquivo_requerimento, new { Type = "file"})
+						<input type="file" id="Arquivos" name="Arquivos" multiple />
+					
+					
 					</div>
 				</div>
 				<div class="botoes-form">
