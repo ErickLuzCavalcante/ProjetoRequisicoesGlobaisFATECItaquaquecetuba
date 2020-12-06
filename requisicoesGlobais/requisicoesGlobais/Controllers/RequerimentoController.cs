@@ -12,6 +12,7 @@ namespace requisicoesGlobais.Controllers
     public class RequerimentoController : Controller
     {
 
+
         // GET: Requerimento
         public ActionResult Requerimento()
         {
@@ -38,6 +39,7 @@ namespace requisicoesGlobais.Controllers
             usuarios.id_usuario = usuarios.id_login;
             usuarios.listar_por_idUsuario();
             requerimento.id_aluno = usuarios.id_aluno;
+            var justificativa = requerimento.justificativa_requerimento;
 			try
 			{
 				string nomeArquivo = "";
@@ -50,7 +52,7 @@ namespace requisicoesGlobais.Controllers
 						var caminho = Path.Combine(Server.MapPath("~/Imagens"), nomeArquivo);
 						arquivo.SaveAs(caminho);
 						requerimento.criar_requerimento();
-						SendMail("erickl.cavalcante@gmail.com",caminho);
+						SendMail("erickl.cavalcante@gmail.com",caminho, justificativa);
 
 					}
 
@@ -67,26 +69,25 @@ namespace requisicoesGlobais.Controllers
             return Redirect("Requerimento/Requerimento");
         }
 
-        public bool SendMail(string email, string caminho )
+        public bool SendMail(string email, string caminho, string justificativa )
         {
             try
             {
                 // Estancia da Classe de Mensagem
                 MailMessage _mailMessage = new MailMessage();
                 // Remetente
-                _mailMessage.From = new MailAddress("samuelsales81@gmail.com"); // ocultado por privacidade
+                _mailMessage.From = new MailAddress(" email do remetente "); // ocultado por privacidade
 
                 // Destinatario seta no metodo abaixo
 
                 //ContrÃ³i o MailMessage
                 _mailMessage.CC.Add("erickl.cavalcante@gmail.com");
-                _mailMessage.Subject = "Olokinho Vou trancar";
+                _mailMessage.Subject =  "Teste " ;
                 _mailMessage.IsBodyHtml = true;
 				_mailMessage.Attachments.Add(new Attachment(caminho));
 
-
-
-				_mailMessage.Body = "<b>OlÃ¡ Tudo bem ?? Vou trancar </b><p>Teste ParÃ¡grafo</p>";
+                // Corpo do Email 
+				_mailMessage.Body = justificativa;
 
                 //CONFIGURAÃ‡ÃƒO COM PORTA
                 SmtpClient _smtpClient = new SmtpClient("smtp.gmail.com", int.Parse("587"));
@@ -96,7 +97,7 @@ namespace requisicoesGlobais.Controllers
 
                 // Credencial para envio por SMTP Seguro (Quando o servidor exige autenticaÃ§Ã£o)
                 _smtpClient.UseDefaultCredentials = false;
-                _smtpClient.Credentials = new NetworkCredential("samuelsaleschaotic@gmail.com", "lo"); // ocultado por privacidade
+                _smtpClient.Credentials = new NetworkCredential("email para autenticação e envio ", "senha do email "); // ocultado por privacidade
 
                 _smtpClient.EnableSsl = true;
 
