@@ -17,7 +17,7 @@ namespace requisicoesGlobais.Models
          */
 
 		// String de conexao, inidica como o sistema deve conectar ao banco de dados
-		private string stringConexao = "Data Source=DESKTOP-KANJINS\\SQLEXPRESS;Initial Catalog=db_aap_sistemas_integrados;Integrated Security=True";
+		private string stringConexao = "Data Source=localhost;Initial Catalog=db_aap_sistemas_integrados;Integrated Security=True";
 
 
 		public SqlDataReader reader;
@@ -79,12 +79,13 @@ namespace requisicoesGlobais.Models
 		{
 			try
 			{
-				Debug.WriteLine("Buscando: " + Atributo);
-				return this.reader[Atributo].ToString();
+				String retorno= this.reader[Atributo].ToString();
+				Debug.WriteLine("Buscando: " + Atributo +"=" + this.reader[Atributo].ToString());
+				return retorno;
 			}
 			catch (Exception ex)
 			{
-				Debug.WriteLine("Falha ao buscar atributo");
+				Debug.WriteLine("Falha ao buscar atributo "+ Atributo);
 				return "";
 			}
 

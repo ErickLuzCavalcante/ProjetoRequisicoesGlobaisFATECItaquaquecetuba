@@ -36,8 +36,8 @@ namespace requisicoesGlobais.Controllers
             usuarios.listar_por_idUsuario();
             requerimento.id_aluno = usuarios.id_aluno;
             requerimento.criar_requerimento();
-            SendMail("erickl.cavalcante@gmail.com");
-            return Redirect("Cadastrar/Cadastrar");
+            //SendMail("erickl.cavalcante@gmail.com");
+            return Redirect("Requerimento/Requerimento");
         }
 
         public bool SendMail(string email)
