@@ -51,8 +51,13 @@ namespace requisicoesGlobais.Controllers
 						nomeArquivo = Path.GetFileName(arquivo.FileName);
 						var caminho = Path.Combine(Server.MapPath("~/Imagens"), nomeArquivo);
 						arquivo.SaveAs(caminho);
-						requerimento.criar_requerimento();
-						SendMail("erickl.cavalcante@gmail.com",caminho, justificativa);
+						int numemero_requerimento = requerimento.criar_requerimento();
+                        if (numemero_requerimento != 0)
+                        {
+                            requerimento.id_requerimento = numemero_requerimento;
+                            SendMail(usuarios, requerimento, caminho);
+                        }
+						
 
 					}
 
@@ -69,35 +74,33 @@ namespace requisicoesGlobais.Controllers
             return Redirect("Requerimento/Requerimento");
         }
 
-        public bool SendMail(string email, string caminho, string justificativa )
+        public bool SendMail(Models.Usuarios usuarios, Models.Requerimento requerimento, string caminho )
         {
             try
             {
                 // Estancia da Classe de Mensagem
                 MailMessage _mailMessage = new MailMessage();
                 // Remetente
-                _mailMessage.From = new MailAddress(" email do remetente "); // ocultado por privacidade
-
+                _mailMessage.From = new MailAddress(usuarios.email_usuario); //Email do usuário
                 // Destinatario seta no metodo abaixo
 
-                //ContrÃ³i o MailMessage
+                //Configurações da mensagem
                 _mailMessage.CC.Add("erickl.cavalcante@gmail.com");
-                _mailMessage.Subject =  "Teste " ;
+                _mailMessage.Subject =  "Requerimento Golobal #"+requerimento.id_requerimento;
                 _mailMessage.IsBodyHtml = true;
 				_mailMessage.Attachments.Add(new Attachment(caminho));
 
                 // Corpo do Email 
-				_mailMessage.Body = justificativa;
-
-                //CONFIGURAÃ‡ÃƒO COM PORTA
+				_mailMessage.Body = "<p>Olá "+usuarios.nome_usuario+",<br> Foi criado a requisição global número <b> "+requerimento.id_requerimento+". </b>, <br> Como justificativa foi registrado:<br>"+requerimento.justificativa_requerimento+"<br>Peço que aguarde o contato da secretaria a continuidade do processo </p>";
+               
+                //Configuração da porta
                 SmtpClient _smtpClient = new SmtpClient("smtp.gmail.com", int.Parse("587"));
+                //SEM PORTA
+               // SmtpClient _smtpClient = new SmtpClient(UtilRsource.ConfigSmtp);
 
-                //CONFIGURAÃ‡ÃƒO SEM PORTA
-                // SmtpClient _smtpClient = new SmtpClient(UtilRsource.ConfigSmtp);
-
-                // Credencial para envio por SMTP Seguro (Quando o servidor exige autenticaÃ§Ã£o)
-                _smtpClient.UseDefaultCredentials = false;
-                _smtpClient.Credentials = new NetworkCredential("email para autenticação e envio ", "senha do email "); // ocultado por privacidade
+               // Credencial para envio por SMTP Seguro (Quando o servidor exige autenticaÃ§Ã£o)
+               _smtpClient.UseDefaultCredentials = false;
+                _smtpClient.Credentials = new NetworkCredential("oculto", "oculto"); // ocultado por privacidade
 
                 _smtpClient.EnableSsl = true;
 
