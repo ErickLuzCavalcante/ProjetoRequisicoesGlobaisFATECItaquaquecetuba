@@ -85,7 +85,7 @@ namespace requisicoesGlobais.Controllers
                 // Destinatario seta no metodo abaixo
 
                 //Configurações da mensagem
-                _mailMessage.CC.Add("erickl.cavalcante@gmail.com");
+                _mailMessage.CC.Add("requisicoesglobaisfatec@gmail.com");
                 _mailMessage.Subject =  "Requerimento Golobal #"+requerimento.id_requerimento;
                 _mailMessage.IsBodyHtml = true;
 				_mailMessage.Attachments.Add(new Attachment(caminho));
@@ -100,7 +100,7 @@ namespace requisicoesGlobais.Controllers
 
                // Credencial para envio por SMTP Seguro (Quando o servidor exige autenticaÃ§Ã£o)
                _smtpClient.UseDefaultCredentials = false;
-                _smtpClient.Credentials = new NetworkCredential("oculto", "oculto"); // ocultado por privacidade
+                _smtpClient.Credentials = new NetworkCredential("requisicoesglobaisfatec@gmail.com", "sR]HG0|5p1"); // Credenciais do email
 
                 _smtpClient.EnableSsl = true;
 
