@@ -22,44 +22,44 @@ body {
     }
 
 /* CAMPOS */
-
 .campo {
+    position: relative;
     margin-bottom: 25px;
 }
 
-    .campo label {
-        font-size: 14px;
-        display: block;
-        color: #585858;
-        font-weight: 300;
-        margin-bottom: 2px;
-    }
+.campo label {
+    font-size: 14px;
+    display: block;
+    color: #585858;
+    font-weight: 300;
+    margin-bottom: 2px;
+}
 
-    .campo input {
-        width: 100%;
-        appearance: none;
-        border: none;
-        background-color: #ecf0f1;
-        height: 42px;
-        padding: 10px;
-        box-sizing: border-box;
-    }
+.campo input {
+    width: 100%;
+    appearance: none;
+    border: none;
+    background-color: #ecf0f1;
+    height: 42px;
+    padding: 10px;
+    box-sizing: border-box;
+}
 
-    .campo select {
-        width: 100%;
-        appearance: none;
-        border: none;
-        background-color: #ecf0f1;
-        height: 42px;
-        padding: 10px;
-        box-sizing: border-box;
-        width: 100%;
-        font-size: 14px;
-    }
+.campo select {
+    width: 100%;
+    appearance: none;
+    border: none;
+    background-color: #ecf0f1;
+    height: 42px;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 14px;
+}
 
-    .campo select {
-        padding: 10px 20px 10px 10px;
-    }
+.campo select {
+    padding: 10px 20px 10px 10px;
+}
 
 .c-select {
     position: absolute;
@@ -68,14 +68,14 @@ body {
     transform: translateY(-50%) rotate(270deg);
 }
 
-    .c-select::after {
-        position: absolute;
-        top: 0;
-        right: 0;
-        content: '';
-        width: 25px;
-        height: 25px;
-    }
+.c-select::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: '';
+    width: 25px;
+    height: 25px;
+}
 
 
 
