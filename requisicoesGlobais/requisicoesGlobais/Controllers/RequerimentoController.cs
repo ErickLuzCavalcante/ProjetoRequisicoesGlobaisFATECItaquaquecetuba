@@ -74,15 +74,15 @@ namespace requisicoesGlobais.Controllers
 
 			}
 			else {
-				ViewBag.Requerimento = "hii deu ruim ";
+				ViewBag.Requerimento = "Houve uma falha ao enviar o requerimento";
 
-				return View("Requerimento/Requerimento");
+				return View("Requerimento");
 			}
 
-			ViewBag.Requerimento = "hii deu certo ";
+			ViewBag.Requerimento = "Requerimento enviado com sucesso";
 
 
-			return View("Requerimento/Requerimento");
+			return View("Requerimento");
 
 		}
 
