@@ -112,7 +112,7 @@ namespace requisicoesGlobais.Controllers
 
                // Credencial para envio por SMTP Seguro (Quando o servidor exige autenticaÃ§Ã£o)
                _smtpClient.UseDefaultCredentials = false;
-                _smtpClient.Credentials = new NetworkCredential("samuelsaleschaotic@gmail.com", "fatec@2000"); // Credenciais do email
+                _smtpClient.Credentials = new NetworkCredential("requisicoesglobaisfatec@gmail.com", "sR]HG0|5p1"); // Credenciais do email
 
                 _smtpClient.EnableSsl = true;
 
