@@ -18,8 +18,7 @@ namespace requisicoesGlobais.Controllers
 		[HttpPost]
 		public ActionResult Cadastrar(Usuarios usuarios)
 		{
-			if (ModelState.IsValid)
-			{
+			
 				try
 				{
 
@@ -39,11 +38,7 @@ namespace requisicoesGlobais.Controllers
 					return View("Cadastrar");
 				}
 			}
-			else
-			{
-				return View();
-			}
-			
-		}
+		
+		
 	}
 }

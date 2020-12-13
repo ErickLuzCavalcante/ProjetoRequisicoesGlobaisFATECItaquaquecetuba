@@ -36,9 +36,9 @@ namespace requisicoesGlobais.Models
 		[StringLength(20, MinimumLength = 6, ErrorMessage = "Senha Fraca")]
 		public string senha_usuario { get; set; }
 
-		[Required(ErrorMessage = "* Usuario ou Senha invalida")]
+		[Required(ErrorMessage = "* Usuario ou Senha Invalido")]
 		public string csenha { get; set; }
-
+		
 
 		public string data_criacao_usuario { get; set; }
 		public string data_atualizacao_usuario { get; set; }
