@@ -22,6 +22,7 @@ namespace requisicoesGlobais.Controllers
 			cursos.cadastrar_curso();
 			return View();
 		}
+
 		[HttpPost]
 		public ActionResult Login(Usuarios usuario)
 		{
@@ -30,9 +31,7 @@ namespace requisicoesGlobais.Controllers
 			//var usuarioRetorno = db.buscarUsuario(usuario);
 			//-------------------------------------------------
 
-			if (ModelState.IsValid)
-			{
-
+			
 				try
 				{
 					if (usuario.verificaLogin() != false)
@@ -59,14 +58,7 @@ namespace requisicoesGlobais.Controllers
 
 				}
 			}
-			return View();
-		}
-
+		
 	
-
-
-
-
-
 	}
 }

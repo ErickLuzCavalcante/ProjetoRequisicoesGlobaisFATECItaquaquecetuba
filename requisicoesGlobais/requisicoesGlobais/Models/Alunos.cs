@@ -16,6 +16,7 @@ namespace requisicoesGlobais.Models
 		public int id_usuario { get; set; }
 
 
+
 	
 		// Metodos
 		public void cadastrar_aluno()

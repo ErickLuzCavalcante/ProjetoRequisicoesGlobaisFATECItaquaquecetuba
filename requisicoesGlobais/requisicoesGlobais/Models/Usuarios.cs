@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace requisicoesGlobais.Models
 {
-	public class Usuarios : Alunos
+	public class Usuarios : Alunos 
 	{
 
 		//declaração de variáveis com gets e sets
@@ -37,9 +37,8 @@ namespace requisicoesGlobais.Models
 		public string senha_usuario { get; set; }
 
 		[Required(ErrorMessage = "* Usuario ou Senha invalida")]
-		public string csenha { get; set; } 
+		public string csenha { get; set; }
 
-		
 
 		public string data_criacao_usuario { get; set; }
 		public string data_atualizacao_usuario { get; set; }
@@ -185,7 +184,7 @@ namespace requisicoesGlobais.Models
 				this.AtualizarCampos();
 			}
 
-			if ((getCpf_usuario() == cpf_usuario) && (getSenha_usuario() == Senha_formulario) && (CPF_formulario != "") && (Senha_formulario != ""))
+			if ((getCpf_usuario() == CPF_formulario) && (getSenha_usuario() == Senha_formulario) && (CPF_formulario != "") && (Senha_formulario != ""))
 			{
 				return true;
 			}

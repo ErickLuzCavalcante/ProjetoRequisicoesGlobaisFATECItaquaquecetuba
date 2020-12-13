@@ -29,7 +29,7 @@ namespace requisicoesGlobais.Models
 				" VALUES(" + id_tp_requerimento + ",'" + desc_tp_requerimento + "')";
 
 			//Realiza o comando no banco de dados
-			bancoDados.Entrada(comandoDeInsercao);
+				bancoDados.Entrada(comandoDeInsercao);
 			}
 		}
 	}
