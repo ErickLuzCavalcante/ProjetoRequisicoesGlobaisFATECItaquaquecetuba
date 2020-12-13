@@ -158,6 +158,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\login.css" />
     <Content Include="Content\main.css" />
+    <Content Include="Content\modal.css" />
     <Content Include="Content\requisicao.css" />
     <Content Include="Content\reset.css" />
     <Content Include="favicon.ico" />
@@ -174,6 +175,7 @@
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <Content Include="Scripts\login.js" />
+    <Content Include="Scripts\modal.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

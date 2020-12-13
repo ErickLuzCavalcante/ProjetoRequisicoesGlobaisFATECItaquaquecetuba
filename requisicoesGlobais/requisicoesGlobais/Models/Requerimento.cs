@@ -10,11 +10,15 @@ namespace requisicoesGlobais.Models
     public class Requerimento
     {
         public int id_requerimento { get; set; }
+
 		[Required(ErrorMessage = "* Escolha o tipo de requerimento")]
 		public int id_tp_requerimento { get; set; }
+
         public int id_aluno { get; set; }
+
 		[Required(ErrorMessage = "* Digite a Justificativa")]
 		public string justificativa_requerimento { get; set; }
+
         public string trancamento_matricula { get; set; }
         public string arquivo_requerimento { get; set; }
 

@@ -33,48 +33,60 @@ namespace requisicoesGlobais.Controllers
         [HttpPost]
         public ActionResult Enviar(Requerimento requerimento)
         {
-            Models.Usuarios usuarios = new Models.Usuarios();
-            usuarios.cpf_usuario = Session["Usuario"].ToString();
-            usuarios.consultar_usuario();
-            usuarios.id_usuario = usuarios.id_login;
-            usuarios.listar_por_idUsuario();
-            requerimento.id_aluno = usuarios.id_aluno;
-            var justificativa = requerimento.justificativa_requerimento;
-			try
+			if (ModelState.IsValid)
 			{
-				string nomeArquivo = "";
-				string arquivoEnviados = "";
-				foreach (var arquivo in requerimento.Arquivos)
+				Models.Usuarios usuarios = new Models.Usuarios();
+				usuarios.cpf_usuario = Session["Usuario"].ToString();
+				usuarios.consultar_usuario();
+				usuarios.id_usuario = usuarios.id_login;
+				usuarios.listar_por_idUsuario();
+				requerimento.id_aluno = usuarios.id_aluno;
+				var justificativa = requerimento.justificativa_requerimento;
+				try
 				{
-					if (arquivo.ContentLength > 0)
+					string nomeArquivo = "";
+					string arquivoEnviados = "";
+					foreach (var arquivo in requerimento.Arquivos)
 					{
-						nomeArquivo = Path.GetFileName(arquivo.FileName);
-						var caminho = Path.Combine(Server.MapPath("~/Imagens"), nomeArquivo);
-						arquivo.SaveAs(caminho);
-						int numemero_requerimento = requerimento.criar_requerimento();
-                        if (numemero_requerimento != 0)
-                        {
-                            requerimento.id_requerimento = numemero_requerimento;
-                            SendMail(usuarios, requerimento, caminho);
-                        }
-						
+						if (arquivo.ContentLength > 0)
+						{
+							nomeArquivo = Path.GetFileName(arquivo.FileName);
+							var caminho = Path.Combine(Server.MapPath("~/Imagens"), nomeArquivo);
+							arquivo.SaveAs(caminho);
+							int numemero_requerimento = requerimento.criar_requerimento();
+							if (numemero_requerimento != 0)
+							{
+								requerimento.id_requerimento = numemero_requerimento;
+								SendMail(usuarios, requerimento, caminho);
+							}
 
+
+						}
+
+						arquivoEnviados = arquivoEnviados + " , " + nomeArquivo;
 					}
-
-					arquivoEnviados = arquivoEnviados + " , " + nomeArquivo;
+					//ViewBag.Mensagem = "Arquivos enviados  : " + arquivoEnviados + " , com sucesso.";
 				}
-				ViewBag.Mensagem = "Arquivos enviados  : " + arquivoEnviados + " , com sucesso.";
-			}
-			catch (Exception ex)
-			{
-				ViewBag.Mensagem = "Erro : " + ex.Message;
-			}
-		
-			
-            return Redirect("Requerimento/Requerimento");
-        }
+				catch (Exception ex)
+				{
+					ViewBag.Mensagem = "Erro : " + ex.Message;
+				}
 
-        public bool SendMail(Models.Usuarios usuarios, Models.Requerimento requerimento, string caminho )
+			}
+			else {
+				ViewBag.Requerimento = "hii deu ruim ";
+
+				return View("Requerimento/Requerimento");
+			}
+
+			ViewBag.Requerimento = "hii deu certo ";
+
+
+			return View("Requerimento/Requerimento");
+
+		}
+
+		public bool SendMail(Models.Usuarios usuarios, Models.Requerimento requerimento, string caminho )
         {
             try
             {
@@ -85,7 +97,7 @@ namespace requisicoesGlobais.Controllers
                 // Destinatario seta no metodo abaixo
 
                 //Configurações da mensagem
-                _mailMessage.CC.Add("requisicoesglobaisfatec@gmail.com");
+                _mailMessage.CC.Add("erickl.cavalcante@gmail.com");
                 _mailMessage.Subject =  "Requerimento Golobal #"+requerimento.id_requerimento;
                 _mailMessage.IsBodyHtml = true;
 				_mailMessage.Attachments.Add(new Attachment(caminho));
@@ -100,7 +112,7 @@ namespace requisicoesGlobais.Controllers
 
                // Credencial para envio por SMTP Seguro (Quando o servidor exige autenticaÃ§Ã£o)
                _smtpClient.UseDefaultCredentials = false;
-                _smtpClient.Credentials = new NetworkCredential("requisicoesglobaisfatec@gmail.com", "sR]HG0|5p1"); // Credenciais do email
+                _smtpClient.Credentials = new NetworkCredential("samuelsaleschaotic@gmail.com", "fatec@2000"); // Credenciais do email
 
                 _smtpClient.EnableSsl = true;
 

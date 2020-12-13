@@ -10,14 +10,19 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="~/Content/modal.css" />
 	<link rel="stylesheet" href="~/Content/reset.css" />
 	<link rel="stylesheet" href="~/Content/main.css" />
 	<link rel="stylesheet" href="~/Content/requisicao.css" />
+
+
 	<title>Requisição Global - Formulário</title>
 </head>
-<body>
+<body >
 	@using (Html.BeginForm("Enviar", "Requerimento", FormMethod.Post, new { enctype = "multipart/form-data" }))
 	{
+
+
 		<form class="container">
 			<header>
 				<div class="container-cont cont-header">
@@ -75,7 +80,7 @@
 									   new SelectListItem{Text = " Problemas de saúde pessoal e/ou familiar não amparadas pela Regulamentação de Graduação", Value = "12"}
 
 				})
-					
+
 
 					</div>
 					<div class="campo">
@@ -90,16 +95,34 @@
 					<div class="campo">
 						<label for="anexo">Anexo</label>
 						<input type="file" id="Arquivos" name="Arquivos" multiple />
-					
-					
+
+
 					</div>
 				</div>
 				<div class="botoes-form">
-					<button type="submit" class="btn danger">Enviar</button>
+					<button type="submit" class="btn danger" id="alerta" >Enviar</button>
 				</div>
+
 			</section>
 		</form>
 	}
-	</body>
+	<!-- The Modal -->
+	<div id="modal" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content">
+			<div class="modal-header">
+				<span class="close">&times;</span>
+				<h2>@ViewBag.Requerimento</h2>
+			</div>
+		</div>
+
+	</div>
+
+</body>
 </html>
+<script src="~/Scripts/modal.js"></script>
+
 <script src="~/Scripts/formulario.js"></script>
+
+
