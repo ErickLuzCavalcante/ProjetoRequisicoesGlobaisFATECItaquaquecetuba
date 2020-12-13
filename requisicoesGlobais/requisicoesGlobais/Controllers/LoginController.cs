@@ -29,33 +29,36 @@ namespace requisicoesGlobais.Controllers
 			//DBUsuario db = new DBUsuario();
 			//var usuarioRetorno = db.buscarUsuario(usuario);
 			//-------------------------------------------------
-			
-			try
+
+			if (ModelState.IsValid)
 			{
-				if (usuario.verificaLogin() != false)
+
+				try
 				{
+					if (usuario.verificaLogin() != false)
+					{
 						Session["Usuario"] = usuario.cpf_usuario;
-						
+
 						return Redirect("Requerimento/Requerimento");
+					}
+
+					//Session["Usuario"] = usuarioRetorno;
+					//return Redirect("Requerimento/Requerimento");
+
+					else
+					{
+
+						return View("Login");
+
+						//var teste = usuario;
+					}
 				}
-
-				//Session["Usuario"] = usuarioRetorno;
-				//return Redirect("Requerimento/Requerimento");
-
-				else
+				catch (Exception ex)
 				{
-					
 					return View("Login");
 
-					//var teste = usuario;
 				}
 			}
-			catch (Exception ex)
-			{
-				return View("Login");
-
-			}
-
 			return View();
 		}
 
