@@ -1,5 +1,6 @@
 ﻿using requisicoesGlobais.Models;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Net.Mail;
@@ -94,10 +95,11 @@ namespace requisicoesGlobais.Controllers
                 MailMessage _mailMessage = new MailMessage();
                 // Remetente
                 _mailMessage.From = new MailAddress(usuarios.email_usuario); //Email do usuário
+                Debug.WriteLine("Email do usuario" + usuarios.email_usuario);
                 // Destinatario seta no metodo abaixo
 
                 //Configurações da mensagem
-                _mailMessage.CC.Add("erickl.cavalcante@gmail.com");
+                _mailMessage.CC.Add("requisicoesglobaisfatec@gmail.com");
                 _mailMessage.Subject =  "Requerimento Golobal #"+requerimento.id_requerimento;
                 _mailMessage.IsBodyHtml = true;
 				_mailMessage.Attachments.Add(new Attachment(caminho));
