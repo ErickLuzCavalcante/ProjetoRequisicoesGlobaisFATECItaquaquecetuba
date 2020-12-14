@@ -94,12 +94,13 @@ namespace requisicoesGlobais.Controllers
                 // Estancia da Classe de Mensagem
                 MailMessage _mailMessage = new MailMessage();
                 // Remetente
-                _mailMessage.From = new MailAddress(usuarios.email_usuario); //Email do usuário
-                Debug.WriteLine("Email do usuario" + usuarios.email_usuario);
+                _mailMessage.From = new MailAddress("samuelsales81@gmail.com"); //Não funciona
+                Debug.WriteLine("Email do usuario " + usuarios.email_usuario);
                 // Destinatario seta no metodo abaixo
 
                 //Configurações da mensagem
                 _mailMessage.CC.Add("requisicoesglobaisfatec@gmail.com");
+                _mailMessage.CC.Add(usuarios.email_usuario);
                 _mailMessage.Subject =  "Requerimento Golobal #"+requerimento.id_requerimento;
                 _mailMessage.IsBodyHtml = true;
 				_mailMessage.Attachments.Add(new Attachment(caminho));
