@@ -1,4 +1,5 @@
 @echo off
+taskkill -im vbcs* -f
 set link_repositorio="https://github.com/ErickLuzCavalcante/ProjetoRequisicoesGlobaisFATECItaquaquecetuba"
 set pastaprojeto=ProjetoRequisicoesGlobaisFATECItaquaquecetuba
 cls
@@ -11,6 +12,8 @@ echo. FATEC DE ITAQUAQUECETUBA
 echo. -------------------------------------
 echo ^>^>Requisitos
 echo.
+echo. + Reinicar o computador antes de
+echo.   de executar
 echo. + GIT - Atualizado
 echo. + Conexao com a internet
 echo. + SQLServer
@@ -25,8 +28,6 @@ cd C:\
 @cd git
 ERASE /S /Q %pastaprojeto%
 RD /S /Q %pastaprojeto%
-echo [Pressione uma tecla para continuar]
-pause>nul
 cls
 echo. Realizando download - GITHUB
 echo. -------------------------------------
@@ -34,15 +35,11 @@ cd C:\>nul
 @md git>nul
 @cd git>nul
 git clone %link_repositorio%
-echo [Pressione uma tecla para continuar]
-pause>nul
 echo. Criando banco de dados - SQLServer
 echo. -------------------------------------
 cd %pastaprojeto%
 cd Documentos
 cd ScriptsBancoDeDados
-echo %cd%
-pause
 echo Deletando Banco de dados
 sqlcmd -S localhost  -i DeletaBancoDeDados.sql
 echo Criando novo Banco de dados
