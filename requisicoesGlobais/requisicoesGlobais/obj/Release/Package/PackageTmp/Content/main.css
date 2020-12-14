@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+
+html, body {
+    font-family: 'Roboto', sans-serif;
+}
+.validation-summary-errors{
+	visibility:hidden;
+	color: white;
+	font-size: 0px;
+}
+.field-validation-error{
+	color: red;
+}

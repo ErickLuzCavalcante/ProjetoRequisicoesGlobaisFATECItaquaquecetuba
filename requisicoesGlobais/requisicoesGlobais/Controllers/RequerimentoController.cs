@@ -83,7 +83,7 @@ namespace requisicoesGlobais.Controllers
 			ViewBag.Requerimento = "Requerimento enviado com sucesso";
 
 
-			return View("Requerimento");
+			return View("../Sucesso/Index");
 
 		}
 

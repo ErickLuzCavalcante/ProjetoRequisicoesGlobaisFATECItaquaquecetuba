@@ -1,0 +1,122 @@
+﻿@model requisicoesGlobais.Models.Usuarios
+
+
+@{
+    Layout = null;
+}
+
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/Content/reset.css" />
+    <link rel="stylesheet" href="~/Content/main.css" />
+    <link rel="stylesheet" href="~/Content/login.css" />
+    <title>APP - ALMIR - LOGIN</title>
+</head>
+<body>
+    <div class="container">
+		<div class="card">
+			<div class="superior">
+				<img src="~/img/fatec-logo.png" alt="Logo Fatec" />
+			</div>
+			@using (Html.BeginForm("Cadastrar", "Cadastrar", FormMethod.Post))
+			{
+				@Html.ValidationSummary()
+
+				<div class="cadastro">
+					<div class="campos-cadastro">
+
+						<div class="divisao-campos">
+							<div class="campo nome">
+								<label for="nome">Nome</label>
+								@Html.TextBoxFor(n => n.nome_usuario)
+							   @Html.ValidationMessageFor(model => model.nome_usuario)
+
+							</div>
+							<div class="campo email">
+								<label for="email">Email</label>
+								@Html.TextBoxFor(e => e.email_usuario)
+								@Html.ValidationMessageFor(model => model.email_usuario)
+							</div>
+						</div>
+
+						<div class="divisao-campos">
+							<div class="campo nome">
+								<label for="cpfCad">CPF</label>
+								@Html.TextBoxFor(c => c.cpf_usuario)
+								@Html.ValidationMessageFor(model => model.cpf_usuario)
+
+							</div>
+							<div class="campo ra">
+								<label for="ra">RA</label>
+								@Html.TextBoxFor(r => r.ra_aluno)
+								@Html.ValidationMessageFor(model => model.ra_aluno)
+
+							</div>
+						</div>
+
+						<div class="divisao-campos">
+							<div class="campo telefone">
+								<label for="telefone">Telefone</label>
+								@Html.TextBoxFor(t => t.telefone_usuario)
+								@Html.ValidationMessageFor(model => model.telefone_usuario)
+
+							</div>
+							<div class="campo turno">
+                                <div class="c-select">&#x2039;</div>
+								<label for="turno">Turno</label>
+								@Html.DropDownListFor(model => model.turno_aluno, new List<SelectListItem>
+									{
+
+										new SelectListItem{Text = "Selecione", Value = ""},
+										new SelectListItem{Text = "Manhã", Value = "Manhã"},
+										new SelectListItem{Text = "Tarde", Value = "Tarde"},
+										new SelectListItem{Text = "Noite", Value = "Noite"}
+									})
+							</div>
+						</div>
+
+						<div class="divisao-campos">
+							<div class="campo senha">
+								<label for="senhaCad">Senha</label>
+								@Html.PasswordFor(s => s.senha_usuario)
+								@Html.ValidationMessageFor(model => model.senha_usuario)
+
+							</div>
+							<div class="campo senha">
+								<label for="confirmeSenha">Confirme a senha</label>
+								@Html.PasswordFor(s => s.csenha)
+								@Html.ValidationMessageFor(model => model.senha_usuario)
+
+							</div>
+						</div>
+
+						<div class="divisao-campos">
+							<div class="campo curso">
+								<div class="c-select">&#x2039;</div>
+								<label for="curso">Curso</label>
+								@Html.DropDownListFor(model => model.id_curso, new List<SelectListItem>
+								   {
+									   new SelectListItem{Text = "Selecione", Value = ""},
+									   new SelectListItem{Text = "Gestão da Tecnologia da Informação", Value = "0"},
+									   new SelectListItem{Text = "Gestão Comercial", Value = "1"},
+									   new SelectListItem{Text = "Secretariado", Value = "2"}
+								   })
+							</div>
+						</div>
+					</div>
+
+					<div class="botoes-lc">
+						<button class="btn danger" type="submit">Cadastrar</button>
+						<button class="btn light">@Html.ActionLink("Entrar", "../Login/Login")</button>
+					</div>
+				</div>
+			}
+
+		</div>
+    </div>
+</body>
+
+</html>

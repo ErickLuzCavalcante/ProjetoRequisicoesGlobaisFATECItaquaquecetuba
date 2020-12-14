@@ -1,0 +1,37 @@
+﻿@model requisicoesGlobais.Models.Usuarios
+
+@{
+	Layout = null;
+}
+
+
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="~/Content/reset.css" />
+	<link rel="stylesheet" href="~/Content/main.css" />
+	<link rel="stylesheet" href="~/Content/login.css" />
+	<title>APP - ALMIR - LOGIN</title>
+</head>
+<body>
+	<div class="container">
+		<div class="card">
+			<div class="superior">
+				<img src="~/img/fatec-logo.png" alt="Logo Fatec" />
+			</div>
+				<div class="login">
+					<div class="campos">
+						<div class="campo cpf">
+							<center><label for="Obrigado">Formulario Enviado Com Sucesso!</label></center>
+		
+					<div class="botoes-lc">
+						<button class="btn light">@Html.ActionLink("Voltar", "../Login/Login")</button>
+					</div>
+				</div>
+		
+		</div>
+	</div>
+</body>
+<script src="~/Scripts/login.js"></script>
+</html>

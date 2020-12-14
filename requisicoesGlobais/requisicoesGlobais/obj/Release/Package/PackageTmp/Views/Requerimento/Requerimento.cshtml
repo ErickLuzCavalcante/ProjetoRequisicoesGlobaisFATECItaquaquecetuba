@@ -1,0 +1,128 @@
+﻿@model requisicoesGlobais.Models.Requerimento
+
+
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="~/Content/modal.css" />
+	<link rel="stylesheet" href="~/Content/reset.css" />
+	<link rel="stylesheet" href="~/Content/main.css" />
+	<link rel="stylesheet" href="~/Content/requisicao.css" />
+
+
+	<title>Requisição Global - Formulário</title>
+</head>
+<body >
+	@using (Html.BeginForm("Enviar", "Requerimento", FormMethod.Post, new { enctype = "multipart/form-data" }))
+	{
+
+
+		<form class="container">
+			<header>
+				<div class="container-cont cont-header">
+					<div class="logo">
+						<img src="../img/fatec-logo.png" alt="Logo FATEC" />
+					</div>
+					<div class="area-btn">
+						<button class="btn danger">@Html.ActionLink("Sair", "../Login/Login")</button>
+					</div>
+				</div>
+			</header>
+
+			<section class="container-cont">
+				<h2 class="titulo">Requerimento Global</h2>
+				<div class="campos">
+					<div class="campo">
+						<div class="c-select">&#x2039;</div>
+						<label for="opReq">Opções de Requerimento Global</label>
+						@Html.DropDownListFor(tr => tr.id_tp_requerimento, new List<SelectListItem>
+					 {
+						  new SelectListItem{Text = "Selecione", Value = ""},
+										   new SelectListItem{Text = "1 ) Beneficios da lei 6.202/75 (gestante/ prote a partir do 8º mês) - Anexar atestado médico", Value = "1"},
+										   new SelectListItem{Text = "2 ) Beneficio do decreto Lei nº 1044/69 (Exercício domiciliar partir de 15 dias) - Anexar atestado", Value = "2"},
+										   new SelectListItem{Text = "3 ) Cancelamento de matricula (devolver a carteirinha da Fatec)", Value = "3"},
+										   new SelectListItem{Text = "4 ) Desistencia da matricula em disciplina", Value = "4"}
+
+					})
+						@Html.ValidationMessageFor(model => model.id_tp_requerimento)
+
+					</div>
+					<br />
+					<div class="switch-trancamento">
+						<div class="label">Trancamento de Matrícula</div>
+						<label class="switch">
+							<input type="checkbox" id="checkBox" onclick="abrirFecharCampo()">
+							<span class="slider round"></span>
+						</label>
+					</div>
+					<div class="campo" id="campoTrancamento">
+						<div class="c-select">&#x2039;</div>
+						@Html.DropDownListFor(tr => tr.trancamento_matricula, new List<SelectListItem>
+				 {
+					  new SelectListItem{Text = "Selecione", Value = ""},
+									   new SelectListItem{Text = " Falta de base teórica para acompanhar o curso", Value = "1"},
+									   new SelectListItem{Text = " Falta de interesse com o curso", Value = "2"},
+									   new SelectListItem{Text = " Falta de motivação para continuar", Value = "3"},
+									   new SelectListItem{Text = " Falta de recursos/infra-estrutura/professores capacitados", Value = "4"},
+									   new SelectListItem{Text = " Incapacidade para o acompanhamento do processo de ensino-aprendizagem", Value = "5"},
+									   new SelectListItem{Text = " Ingressou em outra escola qualquer", Value = "6"},
+									   new SelectListItem{Text = " Ingressou em outra faculdade particular", Value = "7"},
+									   new SelectListItem{Text = " Ingressou em outra faculdade pública", Value = "8"},
+									   new SelectListItem{Text = " Insatisfação com o curso", Value = "9"},
+									   new SelectListItem{Text = " Motivos particulares", Value = "10"},
+									   new SelectListItem{Text = " Motivos profissionais (mudança de turno de trabalho, cidade, atibvidades)", Value = "11"},
+									   new SelectListItem{Text = " Problemas de saúde pessoal e/ou familiar não amparadas pela Regulamentação de Graduação", Value = "12"}
+
+				})
+
+
+					</div>
+					<div class="campo">
+						<label for="txtJustificar">
+							Justificar abaixo o motivo do requerimento
+						</label>
+						<!--<textarea name="txtJustificar" id="txtJustificar"></textarea>-->
+						@Html.TextAreaFor(ta => ta.justificativa_requerimento)
+						@Html.ValidationMessageFor(model => model.justificativa_requerimento)
+
+					</div>
+					<div class="campo">
+						<label for="anexo">Anexo</label>
+						<input type="file" id="Arquivos" name="Arquivos" multiple />
+
+
+					</div>
+				</div>
+				<div class="botoes-form">
+					<button type="submit" class="btn danger" id="alerta" >Enviar</button>
+				</div>
+
+			</section>
+		</form>
+	}
+	<!-- The Modal -->
+	<div id="modal" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content">
+			<div class="modal-header">
+				<span class="close">&times;</span>
+				<h2>@ViewBag.Requerimento</h2>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
+<script src="~/Scripts/modal.js"></script>
+
+<script src="~/Scripts/formulario.js"></script>
+
+

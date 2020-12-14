@@ -135,6 +135,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\SucessoController.cs" />
     <Compile Include="Models\Alunos.cs" />
     <Compile Include="Models\Arquivos.cs" />
     <Compile Include="Models\Cnn.cs" />
@@ -168,6 +169,7 @@
     <Content Include="img\fatec-logo.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\formulario.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -194,6 +196,7 @@
     <Content Include="Views\Requerimento\Requerimento.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Cadastrar\Cadastrar.cshtml" />
+    <Content Include="Views\Sucesso\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

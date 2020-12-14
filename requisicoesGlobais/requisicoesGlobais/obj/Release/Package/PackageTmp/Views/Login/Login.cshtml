@@ -1,0 +1,53 @@
+﻿@model requisicoesGlobais.Models.Usuarios
+
+@{
+	Layout = null;
+}
+
+
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="~/Content/reset.css" />
+	<link rel="stylesheet" href="~/Content/main.css" />
+	<link rel="stylesheet" href="~/Content/login.css" />
+	<title>APP - ALMIR - LOGIN</title>
+</head>
+<body>
+	<div class="container">
+		<div class="card">
+			<div class="superior">
+				<img src="~/img/fatec-logo.png" alt="Logo Fatec" />
+			</div>
+			@using (Html.BeginForm("Login", "Login", FormMethod.Post))
+			{
+				<div class="login">
+					<div class="campos">
+						<div class="campo cpf">
+							<label for="cpf">CPF</label>
+							<!--<input type="text" name="cpf" id="cpf" />-->
+							@Html.TextBoxFor(c => c.cpf_usuario)
+							@Html.ValidationMessageFor(model => model.cpf_usuario)
+
+						</div>
+						<div class="campo senha">
+							<label for="senha">Senha</label>
+							<!--<input type="password" name="senha" id="senha" />-->
+							@Html.PasswordFor(s => s.senha_usuario)
+							@Html.ValidationMessageFor(model => model.csenha)
+
+						</div>
+					</div>
+
+					<div class="botoes-lc">
+						<button class="btn danger" type="submit">Entrar</button>
+						<button class="btn light">@Html.ActionLink("Cadastrar", "../Cadastrar/Cadastrar")</button>
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+</body>
+<script src="~/Scripts/login.js"></script>
+</html>
